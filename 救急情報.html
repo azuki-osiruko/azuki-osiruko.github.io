@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+	<head>
+	  <title>日ノ本、日本ぽ～たる</title>
+	  <meta charset="UTF-8">
+	  <style>
+		table {
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		th, td {
+		  border: 1px solid #ccc;
+		  padding: 8px;
+		}
+
+		/* ホバー時（蛍光ペン） */
+		tr:hover {
+		  background-color: #4d5aaf;
+		  color: #ffffff;
+		}
+		tr:hover a {
+		  color: #ffffff;
+		}
+		a {
+		  color: #2a4bd7; /* 落ち着いた青 */
+		}
+	  </style>
+	</head>
+
+
+
+	<body>
+
+	<h1>救急情報</h1>
+
+		<span style="font-size: 2em;">💓
+		<a href="https://aedm.jp/">
+		AEDマップ</a>
+		</span>（日本全国AEDマップ事務局）
+		<p>
+		～応急処置～
+		<br><a href="https://www.fdma.go.jp/relocation/kyukyukikaku/oukyu/index.html">応急手当WEB講習（総務省消防庁）</a>
+		<br>
+		<br>～異変に気付こう～
+		<br><a href="https://www.fdma.go.jp/publication/portal/items/portal009_kourei.pdf">（１）高齢者</a>
+		<br><a href="https://www.fdma.go.jp/publication/portal/items/portal009_seijim.pdf">（２）成人</a>
+		<br><a href="https://www.fdma.go.jp/publication/portal/items/portal009_kodomo2.pdf">（３）子供</a>
+		</p>
+		<span style="font-size: 2em;">☎️
+		救急電話番号とその役割
+		</span>
+
+		<table>
+
+		<tr>
+		<th>℡</th>
+		<th>電話相手</th>
+		<th>メモ</th>
+		</tr>
+
+		<tr>
+		<td>119</td>
+		<td>
+			<A HREF="https://www.fdma.go.jp/mission/enrichment/kyukyumusen_kinkyutuhou/119.html">
+			消防救急無線・119番緊急通報
+			</A>
+		</td>
+		<td>	（火事・救急車・救助）
+			<BR>スマホがロックされた状態でも緊急通報が可能となっています。</td>
+		</tr>
+
+		<tr>
+		<td>＃7119</td>
+		<td>
+			<A HREF="https://www.fdma.go.jp/mission/enrichment/appropriate/appropriate007.html">
+			救急安心センター事業
+			</A>
+		</td>
+		<td>病院にくべきか、救急車を呼ぶべきか悩むときに相談できる。</td>
+		</tr>
+
+		<tr>
+		<td>♯8000</td>
+		<td>
+			<A HREF="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/newpage_55223.html">
+			子ども医療電話相談事業
+			</A>
+		</td>
+		<td>夜、休日に子どもに何かあったとき、相談できる。</td>
+		</tr>
+
+		</table>
+
+<div class="scene">
+  <div class="cube body"></div>
+  <div class="cube head"></div>
+  <div class="cube ear-left"></div>
+  <div class="cube ear-right"></div>
+  <div class="cube tail"></div>
+</div>
+
+<style>
+.scene {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 80px auto;
+  transform-style: preserve-3d;
+  animation: spin 8s linear infinite;
+  transform-origin: 150px 150px;
+}
+
+/* ★ 立方体の基本形（6面の箱） */
+.cube {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  transform-style: preserve-3d;
+}
+
+.cube::before,
+.cube::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+}
+
+/* 6面を作る */
+.cube div {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border: 2px solid #ccc;
+}
+
+.cube .front  { transform: translateZ(30px); }
+.cube .back   { transform: rotateY(180deg) translateZ(30px); }
+.cube .left   { transform: rotateY(-90deg) translateZ(30px); }
+.cube .right  { transform: rotateY(90deg) translateZ(30px); }
+.cube .top    { transform: rotateX(90deg) translateZ(30px); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(30px); }
+
+/* ★ ウサギのパーツ配置（全部“立体”） */
+.body {
+  transform: translate3d(120px, 150px, 0px);
+  background: #f5f5f5;
+}
+
+.head {
+  transform: translate3d(120px, 90px, 20px);
+  background: #f5f5f5;
+}
+
+.ear-left {
+  transform: translate3d(110px, 40px, 20px) scale(1, 1.6);
+  background: #f5f5f5;
+}
+
+.ear-right {
+  transform: translate3d(150px, 40px, 20px) scale(1, 1.6);
+  background: #f5f5f5;
+}
+
+.tail {
+  transform: translate3d(100px, 160px, -20px) scale(0.6);
+  background: #f5f5f5;
+}
+
+/* 回転アニメーション */
+@keyframes spin {
+  from { transform: rotateX(20deg) rotateY(0deg); }
+  to   { transform: rotateX(20deg) rotateY(360deg); }
+}
+</style>
+
+	</body>
+</html>
