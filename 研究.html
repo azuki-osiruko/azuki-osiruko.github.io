@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>日ノ本、日本ぽ～たる</title>
+<style>
+  body {
+    font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif; /*フォント*/
+    color: #ffffff;
+    margin: 0;
+    background: #000;
+    overflow: hidden;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  /* ★ 背景のキラキラ粒子（3層構造） */
+  .particle {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    background: rgba(180,200,255,0.8);
+    mix-blend-mode: screen;
+    animation: float 14s linear infinite, twinkle 2.4s ease-in-out infinite;
+    filter: blur(2px);
+  }
+
+  @keyframes float {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-250px); }
+  }
+
+  @keyframes twinkle {
+    0%,100% { opacity: 0.2; }
+    50%     { opacity: 0.9; }
+  }
+
+  /* 光の粒（Xperia風） */
+  .trail {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle,
+      rgba(180,200,255,0.9),
+      rgba(180,200,255,0)
+    );
+    mix-blend-mode: screen;
+    animation: fade 0.8s ease-out forwards;
+    filter: blur(4px);
+  }
+
+  /* FF12 PS4テーマ風：透明リング */
+  .ring {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 1.5px solid rgba(180,200,255,0.35);
+    mix-blend-mode: screen;
+    animation: ringExpand 1.6s ease-out forwards;
+    filter: blur(1px);
+  }
+
+  @keyframes fade {
+    0%   { opacity: 1; transform: scale(0.6); }
+    50%  { opacity: 0.6; transform: scale(1.4); }
+    100% { opacity: 0; transform: scale(2.2); }
+  }
+
+  @keyframes ringExpand {
+    0%   { opacity: 0.7; transform: scale(0.2); }
+    100% { opacity: 0; transform: scale(7); }
+  }
+
+
+}
+
+
+
+
+</style>
+</head>
+
+
+
+<body>
+
+
+<h1 class="assemble">
+  <span>[<span class="extra"></span></span>
+  <span>研<span class="extra"></span></span>
+  <span>究<span class="extra"></span></span>
+  <span>]<span class="extra"></span></span>
+</h1>
+
+
+<h2>医療</h2>
+ <p>歯の再生　トレジェムバイオファーマ株式会社　https://toregem.co.jp/about
+<br>加齢による内臓脂肪蓄積　小林製薬×近畿大学　https://www.kobayashi.co.jp/newsrelease/2025/20251107_01/
+<br>がん陽子線治療　津山中央病院　https://medica.sanyonews.jp/article/32710
+<br>がん細胞だけを攻撃するウイルス製剤　岡山大学　https://www.okayama-u.ac.jp/tp/news/news_id14594.html
+<br>皮膚の傷口を早く治す　オカモト株式会社×東北大学　https://www.youtube.com/watch?v=FafgnDd9Jfs
+</p>
+
+
+
+
+
+
+
+<script>
+  let hue = 220; // FF12の青紫
+
+  /* ★ 背景のキラキラ粒子を大量生成（3層） */
+  function createParticles(count, sizeMin, sizeMax, speedOffset) {
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+
+      const size = sizeMin + Math.random() * (sizeMax - sizeMin);
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+
+      p.style.left = Math.random() * window.innerWidth + 'px';
+      p.style.top = Math.random() * window.innerHeight + 'px';
+
+      p.style.animationDuration = (12 + speedOffset + Math.random() * 6) + 's';
+      p.style.animationDelay = (Math.random() * 6) + 's';
+
+      document.body.appendChild(p);
+    }
+  }
+
+  // 前景・中景・後景
+  createParticles(40, 2, 4, 0);   // 前景（明るい）
+  createParticles(60, 1, 3, 4);   // 中景
+  createParticles(80, 1, 2, 8);   // 後景（暗め）
+
+  /* ★ 光跡とリング */
+  function createLight(x, y) {
+    const t = document.createElement('div');
+    t.classList.add('trail');
+
+    hue = (hue + 1) % 360;
+    t.style.background = `radial-gradient(circle,
+      hsla(${hue}, 80%, 75%, 1),
+      hsla(${hue}, 80%, 55%, 0)
+    )`;
+
+    t.style.left = (x - 20) + 'px';
+    t.style.top = (y - 20) + 'px';
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 800);
+
+    const r = document.createElement('div');
+    r.classList.add('ring');
+    r.style.borderColor = `hsla(${hue}, 80%, 75%, 0.35)`;
+    r.style.left = (x - 5) + 'px';
+    r.style.top = (y - 5) + 'px';
+    document.body.appendChild(r);
+    setTimeout(() => r.remove(), 1600);
+  }
+
+  window.addEventListener('mousemove', e => {
+    createLight(e.clientX, e.clientY);
+  });
+
+  window.addEventListener('touchmove', e => {
+    const touch = e.touches[0];
+    createLight(touch.clientX, touch.clientY);
+  });
+</script>
+
+</body>
+</html>
