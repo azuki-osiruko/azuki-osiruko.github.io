@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+  	<head>
+	  <title>ぽ～たる</title>
+	  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <style>
+		/* ページ離脱時のフェードアウト */
+		.fade-out {
+			opacity: 0;
+			transition: opacity 0.8s ease;
+		}
+	    body {
+			/* フォント */
+			font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+			/* 背景色   */
+			background-color: lightblue;
+			/* マウスポインター */
+			cursor: url("画_カニ.png"), auto;
+			/* ページ切り替え（読み込み時のフェードイン） */
+			opacity: 0;
+  			animation: fadeIn 0.8s ease forwards;	
+	    }
+		@keyframes fadeIn {
+			to { opacity: 1; }
+		}
+		  /* リンクの上でも同じカーソルにする */
+		  a {
+			  cursor: url("画_カニ.png"), auto;
+		  }
+		  /* ホバー時（蛍光ペン） */
+		  a:hover {
+			  background-color: yellow;
+		  }
+		  p {
+			  line-height: 1.6;
+		  }
+    </style>
+    </head>
+  
+	<body>
+		<h1>地域インフラ</h1>
+		<!-- 
+		＊＊書き方ルール＊＊＊＊
+		① URL 
+		② プリフィックス画像 
+		③ リンク先の内容
+		-->
+		<p>
+			<a href="https://www.soumu.go.jp/menu_seisaku/chiho/index.html" style="color: red; font-weight: bold; font-size: 20px;">
+				<img src="画_花.png" width="30" height="30">
+				地方行財政
+			</a>
+			<br>
+			<a href="http://suidoukyoku.net/">
+				<img src="画_花.png" width="30" height="30">
+				水道局
+			</a>
+			<br>
+			<a href="https://www.gomisaku.jp/?lang=ja">
+				<img src="画_花.png" width="30" height="30">
+				ゴミの分別
+			</a>
+		</p>
+		<footer style="margin-top: 50px; color: gray;">
+			<small>
+				このサイトは個人制作のリンクポータルです。
+				<br>
+				各リンク先の内容・運営はリンク先各団体に帰属します。
+			</small>
+		</footer>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const links = document.querySelectorAll("a");
+				links.forEach(link => {
+					const url = link.getAttribute("href");
+					// 外部リンクは新しいタブで開く
+					if (url && url.startsWith("http")) {
+						link.target = "_blank";
+						link.rel = "noopener noreferrer";
+						return; // 外部リンクはフェードアウトしない
+					}
+					// 内部リンクだけフェードアウト
+					link.addEventListener("click", e => {
+						if (!url || url.startsWith("#")) return;
+						e.preventDefault();
+						document.body.classList.add("fade-out");
+						setTimeout(() => {window.location = url;}, 500);
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
