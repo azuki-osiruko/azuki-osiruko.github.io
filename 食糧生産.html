@@ -31,17 +31,35 @@
     
     <h1>食べ物</h1>
     <h2>生産</h2>
-    <p><a href="https://www.youtube.com/watch?v=o9SlkUhL09M">・国産小麦</a>
-	<p><a href="https://www.mri.co.jp/knowledge/column/20230710.html">・米農家の赤字（コラム）</a>
-	<p><a href="https://www.mri.co.jp/knowledge/column/20230710.html">・祖父の米農家を継ぐ東大卒（コラム）</a>
-	<p><a href="https://www.amazon.co.jp/東大卒、じいちゃんの田んぼを継ぐ-廃業寸前ギリギリ農家の人生を賭けた挑戦-米利休/dp/4046073829">　（単行本）東大卒、じいちゃんの田んぼを継ぐ 廃業寸前ギリギリ農家の人生を賭けた挑戦</a>
+    <p>
+		<a href="https://www.youtube.com/watch?v=o9SlkUhL09M">・国産小麦</a>
+		<br><a href="https://www.mri.co.jp/knowledge/column/20230710.html">・米農家の赤字（コラム）</a>
+		<br><a href="https://www.mri.co.jp/knowledge/column/20230710.html">・祖父の米農家を継ぐ東大卒（コラム）</a>
+		<br><a href="https://www.amazon.co.jp/東大卒、じいちゃんの田んぼを継ぐ-廃業寸前ギリギリ農家の人生を賭けた挑戦-米利休/dp/4046073829">　（単行本）東大卒、じいちゃんの田んぼを継ぐ 廃業寸前ギリギリ農家の人生を賭けた挑戦</a>
+	</p>
     <h2>その他YouTubeチャンネル</h2>
     <p><a href="https://www.youtube.com/playlist?list=PLkZ0Cdjz3KkipABBxqNuMBY0SeIUeCtCx">・アニメ「百姓貴族」</a></p>
-    <script>
-      document.querySelectorAll('a').forEach(link => {
-        link.setAttribute('target', '_blank');
-				link.setAttribute('rel', 'noopener noreferrer');
-			});
-		</script>
+	  
+	  <script>
+		  document.addEventListener("DOMContentLoaded", () => {
+			  const links = document.querySelectorAll("a");
+			  links.forEach(link => {
+				  const url = link.getAttribute("href");
+				  // 外部リンクは新しいタブで開く
+				  if (url && url.startsWith("http")) {
+					  link.target = "_blank";
+					  link.rel = "noopener noreferrer";
+					  return; // 外部リンクはフェードアウトしない
+				  }
+				  // 内部リンクだけフェードアウト
+				  link.addEventListener("click", e => {
+					  if (!url || url.startsWith("#")) return;
+					  e.preventDefault();
+					  document.body.classList.add("fade-out");
+					  setTimeout(() => {window.location = url;}, 500);
+				  });
+			  });
+		  });
+	  </script>
   </body>
 </html>
