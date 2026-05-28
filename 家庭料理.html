@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>ぽ～たる</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        /* フォント */
+        font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* 背景色   */
+        background-color: lightblue;
+        /* マウスポインター */
+        cursor: url("画_カニ.png"), auto;
+        /* リンクの上でも同じカーソルにする */
+        a {
+          cursor: url("画_カニ.png"), auto;
+        }
+        /* ホバー時（蛍光ペン） */
+        a:hover {
+          background-color: yellow;
+        }
+        p {
+          line-height: 1.6;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>家庭料理レシピ</h1>
+    <h2>ごはん</h2>
+    <p><a href="https://www.zpr.co.jp/iroha/">（はじめに）お米の炊き方</a>　【<a href="https://www.zennoh.or.jp/ib/contents/eat_know/takikata.html">失敗したご飯</a>】
+    <br><a href="https://recipe.rakuten.co.jp/recipe/1600001674/">・昆布だしごはん</a>
+    <br><a href="https://mi-journey.jp/foodie/84339/#musiki">・赤飯（蒸し器）</a>
+    <br><a href="https://www.sirogohan.com/recipe/sumesi/">・酢飯</a>
+    </p>
+    
+    <h2>おかず　お茶漬け？肉じゃが？豚汁？鶏むね肉？？？焼き魚？</h2>
+    
+    <script>
+      document.querySelectorAll('a').forEach(link => {
+        link.setAttribute('target', '_blank');
+				link.setAttribute('rel', 'noopener noreferrer');
+			});
+		</script>
+  </body>
+</html>
