@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>ぽ～たる</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        /* フォント */
+        font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* 背景色   */
+        background-color: lightblue;
+        /* マウスポインター */
+        cursor: url("画_カニ.png"), auto;
+        /* リンクの上でも同じカーソルにする */
+        a {
+          cursor: url("画_カニ.png"), auto;
+        }
+        /* ホバー時（蛍光ペン） */
+        a:hover {
+          background-color: yellow;
+        }
+        p {
+          line-height: 1.6;
+        }
+      }
+    </style>
+  </head>
+  <body style="font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;"
+    style="background-color: lightblue;">
+    
+    <h1>食べ物</h1>
+    <h2>生産</h2>
+    <p><a href="https://www.youtube.com/watch?v=o9SlkUhL09M">・国産小麦</a>
+    <h2>その他YouTubeチャンネル</h2>
+    <p><a href="https://www.youtube.com/playlist?list=PLkZ0Cdjz3KkipABBxqNuMBY0SeIUeCtCx">・アニメ「百姓貴族」</a></p>
+    <script>
+      document.querySelectorAll('a').forEach(link => {
+        link.setAttribute('target', '_blank');
+				link.setAttribute('rel', 'noopener noreferrer');
+			});
+		</script>
+  </body>
+</html>
