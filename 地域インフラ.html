@@ -35,25 +35,6 @@
 		  p {
 			  line-height: 1.6;
 		  }
-		  [popover] {
-			  position: absolute;
-			  display: block;
-			  padding: 1em;
-			  background: #f9f9ff;
-			  border: 1px solid #ccc;
-			  border-radius: 10px;
-			  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-			  
-			  /* popover が閉じたとき */
-			  opacity: 0;
-			  transform: scale(0.96) translateY(2px);
-			  transition: opacity 0.3s ease, transform 0.3s ease;
-		  }
-		  /* popover が開いたとき */
-		  [popover]:popover-open {
-			  opacity: 1;
-			  transform: scale(1) translateY(0);
-		  }
     </style>
     </head>
   
@@ -87,14 +68,10 @@
 			<br>・国土地理院　<a href="https://www.gsi.go.jp/REPORT/JIHO/vol140-main.html">（国土地理院報告会）</a>
 								<a href="https://www.gsi.go.jp/REPORT/JIHO/ji-home.html">（国土地理院時報）</a>
 			<br>～～～～～～～地域のトピック～～～～～～～
-			<br>
-			<span popovertarget="info">廃墟、限界ニュータウン</span>
-				<div id="info" popover>
-    			<p>資産価値ZERO -限界ニュータウン探訪記- https://www.youtube.com/@urbansprawl-zero
-				<br>だいまつのどこでも探検隊 https://www.youtube.com/@daimatsudokodemo
-				</p>
-  				</div>
 			<a href="https://kouei-guide.jp/#google_vignette">公営住宅</a>
+			<br>廃墟、限界ニュータウン
+    			<br>資産価値ZERO -限界ニュータウン探訪記- https://www.youtube.com/@urbansprawl-zero
+				<br>だいまつのどこでも探検隊 https://www.youtube.com/@daimatsudokodemo
 			<br><span style="font-size: 2em;">📍</span>北海道
 			<br><span style="font-size: 2em;">📍</span>東北（青森・岩手・宮城・秋田・山形・福島）
 			<br>宮城県の伝承　https://legend.main.jp/
