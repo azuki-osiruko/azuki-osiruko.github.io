@@ -41,20 +41,16 @@
 			  border: 1px solid #ccc;
 			  border-radius: 10px;
 			  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+			  
+			  /* popover が閉じたとき */
+			  opacity: 0;
+			  transform: scale(0.96) translateY(2px);
+			  transition: opacity 0.3s ease, transform 0.3s ease;
 		  }
-		  button {
-			  padding: 8px 16px;
-			  font-size: 16px;
-			  border: none;
-			  border-radius: 12px;
-			  background-color: #ffffffcc; /* 半透明の白 */
-			  /*cursor: pointer;*/
-			  transition: background-color 0.3s ease, transform 0.2s ease;
-			  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-		  }
-		  button:hover {
-			  background-color: #fff;
-			  transform: translateY(-2px);
+		  /* popover が開いたとき */
+		  [popover]:popover-open {
+			  opacity: 1;
+			  transform: scale(1) translateY(0);
 		  }
     </style>
     </head>
@@ -90,13 +86,13 @@
 								<a href="https://www.gsi.go.jp/REPORT/JIHO/ji-home.html">（国土地理院時報）</a>
 			<br>～～～～～～～地域のトピック～～～～～～～
 			<br>
-			<button popovertarget="info">廃墟、限界ニュータウン</button>
+			<a popovertarget="info">廃墟、限界ニュータウン</a>
 				<div id="info" popover>
     			<p>資産価値ZERO -限界ニュータウン探訪記- https://www.youtube.com/@urbansprawl-zero
 				<br>だいまつのどこでも探検隊 https://www.youtube.com/@daimatsudokodemo
 				</p>
   				</div>
-			<button><a href="https://kouei-guide.jp/#google_vignette">公営住宅</a></button>
+			<br><a href="https://kouei-guide.jp/#google_vignette">公営住宅</a>
 			<br><span style="font-size: 2em;">📍</span>北海道
 			<br><span style="font-size: 2em;">📍</span>東北（青森・岩手・宮城・秋田・山形・福島）
 			<br>宮城県の伝承　https://legend.main.jp/
@@ -124,13 +120,19 @@
 			document.addEventListener("DOMContentLoaded", () => {
 				const links = document.querySelectorAll("a");
 				links.forEach(link => {
+					
 					const url = link.getAttribute("href");
+					
+					// popover トリガーはフェードアウト処理を無視
+					if (link.hasAttribute("popovertarget")) return;
+					
 					// 外部リンクは新しいタブで開く
 					if (url && url.startsWith("http")) {
 						link.target = "_blank";
 						link.rel = "noopener noreferrer";
 						return; // 外部リンクはフェードアウトしない
 					}
+					
 					// 内部リンクだけフェードアウト
 					link.addEventListener("click", e => {
 						if (!url || url.startsWith("#")) return;
