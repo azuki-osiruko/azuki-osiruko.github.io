@@ -33,11 +33,38 @@
 			/* ホバー時（蛍光ペン黄色） */
 			a:hover {background-color: yellow;}
 			p {line-height: 1.6;}
-			
+
+			.body-accordion input {display: none;}
+			.body-accordion label {
+				display: block;
+				font-size: 1.6em;
+				font-weight: bold;
+				cursor: pointer;
+				padding: 8px 0;
+			}
+			.body-accordion label::before {
+				content: "＋ ";
+				font-weight: bold;
+			}
+			.body-accordion input:checked + label::before {content: "－ ";}
+			.body-accordion .content {
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.5s ease;
+			}
+			.body-accordion input:checked ~ .content {
+				max-height: 5000px; /* 十分大きければOK */
+			}
     </style>
 	</head>
+	
 	<body>
-		<h2>💻インターネット利活用</h2>
+	<h2>💻インターネット利活用</h2>
+		
+	<div class="body-accordion">
+		<input type="checkbox" id="toggle-body">
+		<label for="toggle-body">マイクロソフトのword、Excel、PowerPoint、forms</label>
+    <div class="content">
 		<p>　<a href="https://www.youtube.com/watch?v=22sc45rLqx4">※【Microsoft 365】Office製品のバージョン情報を確認する方法</a>
 		<br>
 		<br>　Excel</p>
@@ -81,7 +108,8 @@
 		<ol>
 		<li><a href="https://www.youtube.com/watch?v=ZkSjqeM_PyA&t=1s">はじめてのアンケート作成</a></li>
 		</ol>
-
+	</div>
+	</div>
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
 				const links = document.querySelectorAll("a");
