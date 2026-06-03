@@ -4,6 +4,37 @@
 		<title>日ノ本、日本ぽ～たる</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<style>
+		/* ページ離脱時のフェードアウト */
+		.fade-out {
+			opacity: 0;
+			transition: opacity 0.8s ease;
+		}
+		/* ページ本文へ適用するデザイン */
+	    body {
+			
+			/* ページ切り替え（読み込み時のフェードイン） */
+			opacity: 0;
+  			animation: fadeIn 0.8s ease forwards;	
+			/* マウスポインター */
+			cursor: url("画_カニ.png"), auto;
+			/* フォント */
+			font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+			/* 背景色 */
+			background-color: lightblue;
+		}
+			/* ページ切り替え（読み込み時のフェードイン） */
+			@keyframes fadeIn {to { opacity: 1; }}
+			
+			/* リンクの上でも同じカーソルにする */
+			a {cursor: url("画_カニ.png"), auto;	}
+			
+			/* ホバー時（蛍光ペン黄色） */
+			a:hover {background-color: yellow;}
+			p {line-height: 1.6;}
+			
+    </style>
 	</head>
 	<body>
 		<h1>インターネット活用</h1>
