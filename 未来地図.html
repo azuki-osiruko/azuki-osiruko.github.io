@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>ぽ～たる</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        /* フォント */
+        font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* 背景色   */
+        background-color: lightblue;
+        /* マウスポインター */
+        cursor: url("画_カニ.png"), auto;
+        /* リンクの上でも同じカーソルにする */
+        a {
+          cursor: url("画_カニ.png"), auto;
+        }
+        /* ホバー時（蛍光ペン） */
+        a:hover {
+          background-color: yellow;
+        }
+        p {
+          line-height: 1.6;
+        }
+      }
+    </style>
+  </head>
+  <body style="font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;"
+    style="background-color: lightblue;">
+    
+    <h1>未来構想建築物、他</h1>
+    <p>
+		<a href="https://www.cas.go.jp/jp/seisaku/bousaichou_preparation/index.html">防災庁</a>
+    <br><a href="https://www.cas.go.jp/jp/seisaku/suisinkaigi/index.html">国土強靭化推進会議</a>
+    <br><a href="https://www.mlit.go.jp/toshi/city/sigaiti/toshi_urbanmainte_tk_000056.html">地方再生</a>
+    <br><a href="https://skyskysky.net/construction-japan.html">建設中・計画中のビル</a>
+		<br><a href="https://special.nikkeibp.co.jp/atclh/NXT/25/panasonic1024/perovskite_vol2/index.html">「日本橋本町三井ビルディング &forest」と「(仮称）日本橋本町一丁目5番街区計画」</a>
+		<br><a href="https://tech.panasonic.com/jp/phd/technology-future-vision/?utm_source=pv_mofu&utm_medium=referral&utm_campaign=technology_future_vision">Panasonic技術未来ビジョン</a>
+    <br><a href="https://special.nikkeibp.co.jp/atclh/NXT/25/panasonic1024/perovskite_rt/">ガラス型ペロブスカイト太陽電池</a>
+		<br><a href="https://note.kobayashi.co.jp/n/n840d56ef0631">小林製薬　彩都ものづくりラボ</a>
+    
+    </p>
+    
+	  <script>
+		  document.addEventListener("DOMContentLoaded", () => {
+			  const links = document.querySelectorAll("a");
+			  links.forEach(link => {
+				  const url = link.getAttribute("href");
+				  
+				  // 外部リンクは新しいタブで開く
+				  if (url && url.startsWith("http")) {
+					  link.target = "_blank";
+					  link.rel = "noopener noreferrer";
+					  return; // 外部リンクはフェードアウトしない
+				  }
+
+				  // 内部リンクだけフェードアウト
+				  link.addEventListener("click", e => {
+					  if (!url || url.startsWith("#")) return;
+					  e.preventDefault();
+					  document.body.classList.add("fade-out");
+					  setTimeout(() => {
+						  window.location = url;
+					  }, 500);
+				  });
+			  });
+		  });
+	  </script>
+
+  </body>
+</html>
