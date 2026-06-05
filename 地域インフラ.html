@@ -66,8 +66,50 @@
 			  padding: 8px 12px; 			/* 内側の余白 */
 			  border-radius: 8px; 			/* 角丸 */
 			  margin: 10px 0;				/* 上下の間隔 */
-}
+		  }
 
+		  /*----------追加----------*/
+		  .links-modern {
+			  font-family: system-ui, sans-serif;
+			  color: #333;
+			  padding: 12px 0;
+		  }
+
+		  .links-title {
+			  font-size: 1.25rem;
+			  font-weight: 600;
+			  margin-bottom: 12px;
+		  }
+
+		  .links-subtitle {
+			  font-size: 1rem;
+			  font-weight: 600;
+			  margin-top: 20px;
+			  margin-bottom: 6px;
+			  color: #555;
+		  }
+
+		  .links-list {
+			  list-style: none;
+			  padding: 0;
+			  margin: 0;
+		  }
+
+		  .links-list li {
+			  margin: 6px 0;
+		  }
+		  
+		  .links-list a {
+			  color: #1a73e8;
+			  text-decoration: none;
+			  font-size: 0.95rem;
+			  transition: color 0.2s ease;
+		  }
+
+		  .links-list a:hover {
+			  color: #0b57d0;
+		  }
+         /*----------ここまで----------*/
 	  </style>
     </head>
   
@@ -98,6 +140,7 @@
 			-------おでかけしよ！-------
 			<br><a href="https://onsenguide.org/">温泉</a><a href="https://yuru-to.net/overview/">（マップから）</a>　<a href="https://www.michi-no-eki.jp/">道の駅</a>
 			<br>
+			<!-- 
 			<br>-------地域のトピック-------
 			<br>*<a href="https://www.fmmc.or.jp/commons/merit/3-1.html">Lアラート</a>（防災系アプリ）
 			<br>*<a href="https://kouei-guide.jp/#google_vignette">公営住宅</a>
@@ -107,6 +150,28 @@
 			<br>（youtubeチャンネル）
     			<br><a href="https://www.youtube.com/@urbansprawl-zero">・資産価値ZERO -限界ニュータウン探訪記- </a>
 				<br><a href="https://www.youtube.com/@daimatsudokodemo">・だいまつのどこでも探検隊</a>
+			-->
+		<section class="links-modern">
+			<h3 class="links-title">地域のトピック</h3>
+
+			<ul class="links-list">
+				<li><a href="https://www.fmmc.or.jp/commons/merit/3-1.html">Lアラート（防災アプリ）</a></li>
+				<li><a href="https://kouei-guide.jp/#google_vignette">公営住宅ガイド</a></li>
+				<li><a href="未来地図.html">これからの建築物・未来地図</a></li>
+			</ul>
+
+			<h4 class="links-subtitle">廃墟・限界ニュータウン</h4>
+			<ul class="links-list">
+				<li><a href="https://haikyo.info/list.php?k=4">廃墟検索地図</a></li>
+			</ul>
+			
+			<h4 class="links-subtitle">YouTube チャンネル</h4>
+			<ul class="links-list">
+				<li><a href="https://www.youtube.com/@urbansprawl-zero">資産価値ZERO -限界ニュータウン探訪記-</a></li>
+				<li><a href="https://www.youtube.com/@daimatsudokodemo">だいまつのどこでも探検隊</a></li>
+			</ul>
+		</section>
+
 			<br><div class="region"><span style="font-size: 2em;">📍北海道</span></div>
 			<br><div class="region"><span style="font-size: 2em;">📍東北</span>
 			<br><div class="pref-row"><a class="pref" href="#">青森</a>
