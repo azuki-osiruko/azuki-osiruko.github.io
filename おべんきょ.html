@@ -24,12 +24,37 @@
           line-height: 1.6;
         }
       }
+		
+		.body-accordion input {display: none;}
+		.body-accordion label {
+			display: block;
+			font-size: 1.6em;
+			font-weight: bold;
+			cursor: pointer;
+			padding: 8px 0;
+		}
+		.body-accordion label::before {
+			content: "＋ ";
+			font-weight: bold;
+		}
+		.body-accordion input:checked + label::before {content: "－ ";}
+		.body-accordion .content {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.5s ease;
+		}
+		.body-accordion input:checked ~ .content {
+			max-height: 5000px; /* 十分大きければOK */
+		}
     </style>
   </head>
   <body style="font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;"
     style="background-color: lightblue;">
-    
-    <h1>おべんきょ</h1>
+
+	<!--とぐる設定-->
+    <div class="body-accordion">
+	<input type="checkbox" id="toggle-body">
+	<label for="toggle-body">おべんきょ</label>
     	<p>　・<a href="マナーとか作法とか.html">マナー</a>
 		<br>　・<a href="家庭料理.html">家庭料理</a>
 		<br>　・<a href="はつでん.html">＜準備中＞えねるぎー</a>
