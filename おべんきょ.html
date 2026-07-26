@@ -5,25 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      body {
-        /* フォント */					font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
-        /* 背景色   */					background-color: lightblue;
-        /* マウスポインター */        	cursor: url("画_カニ.png"), auto;
-		/* 縦書き（右→左） */			writing-mode: vertical-rl;
-		/* 句読点や数字を縦向きに */		text-orientation: upright;
-      }
-		/* リンクの上でも同じカーソルにする */
-        a {
-          cursor: url("画_カニ.png"), auto;
-        }
-        /* ホバー時（蛍光ペン） */
-        a:hover {
-          background-color: yellow;
-        }
-        p {
-          line-height: 1.6;
-        }
-		
+		/* ★ページの指定★ */			body {
+        /* フォント */						font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* 背景色   */						background-color: lightblue;
+        /* マウスポインター */        		cursor: url("画_カニ.png"), auto;
+		/* 縦書き（右→左） */				writing-mode: vertical-rl;
+		/* 句読点や数字を縦向きに */			text-orientation: upright;
+										}
+		/* ★リンクの指定★ */			a {
+        /* マウスカーソル */					cursor: url("画_カニ.png"), auto;
+        								}
+        /* ★リンクホバー時の指定★ */	a:hover {
+        /* 蛍光ペン */						background-color: yellow;
+        								}
+        /* ★本文の指定★ */				p {
+											line-height: 1.6;
+        								}
 		.body-accordion input {display: none;}
 		.body-accordion label {
 			display: block;
@@ -36,14 +33,17 @@
 			content: "＋ ";
 			font-weight: bold;
 		}
-		.body-accordion input:checked + label::before {content: "－ ";}
+		.body-accordion input:checked + label::before {
+			content: "－ ";
+		}
 		.body-accordion .content {
-			max-height: 0;
+			max-width: 0;	/* 幅を閉じる */
 			overflow: hidden;
-			transition: max-height 0.5s ease;
+			transition: max-width 0.5s ease;
+			writing-mode: vertical-rl; /* 中身も縦書き */
 		}
 		.body-accordion input:checked ~ .content {
-			max-height: 5000px; /* 十分大きければOK */
+			max-width: 2000px;	/* 開いたときの幅 */
 		}
     </style>
   </head>
