@@ -34,14 +34,16 @@
 		@keyframes fadeIn {
 			to { opacity: 1; }
 		}
-		  /* リンクの上でも同じカーソルにする */
+		  /* リンクの基本指定 */
 		  a {
 			  cursor: url("画_カニ.png"), auto;
+			  text-decoration: none;   /* リンクにつく線をなくす */
 		  }
-		  /* ホバー時（蛍光ペン） */
+		  /* リンクのホバー指定 */
 		  a:hover {
-			  background-color: yellow;
+			  background-color: yellow;	/*ホバー時（蛍光ペン）*/
 		  }
+		  /* 本文の基本指定 */
 		  p {
 			  line-height: 1.6;
 		  }
