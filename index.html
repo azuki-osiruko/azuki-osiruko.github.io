@@ -23,15 +23,13 @@
 			transition: opacity 0.8s ease;
 		}
 	    body {
-			/* フォント */
-			font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
-			/* 背景色   */
-			background-color: lightblue;
-			/* マウスポインター */
-			cursor: url("画_カニ.png"), auto;
-			/* ページ切り替え（読み込み時のフェードイン） */
-			opacity: 0;
-  			animation: fadeIn 0.8s ease forwards;	
+			/* マウスポインター */			cursor: url("画_カニ.png"), auto;
+			/* 読み込み時のフェードイン */	opacity: 0;
+  											animation: fadeIn 0.8s ease forwards;
+			/* 背景色   */					background-color: lightblue;
+			/* フォント */					font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+			/* 縦書き（右→左） */			writing-mode: vertical-rl;
+			/* 句読点や数字を縦向きに */		text-orientation: upright;
 	    }
 		@keyframes fadeIn {
 			to { opacity: 1; }
