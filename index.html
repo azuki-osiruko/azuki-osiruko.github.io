@@ -12,6 +12,53 @@
   </body>
 </html>
   -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+		/* ★ページの指定★ */			body {
+        /* フォント */						font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* 背景色   */						background-color: lightblue;
+        /* マウスポインター */        		cursor: url("画_カニ.png"), auto;
+		/* 縦書き（右→左） */				writing-mode: vertical-rl;
+		/* 句読点や数字を縦向きに */			text-orientation: upright;
+										}
+		/* ★リンクの指定★ */			a {
+        /* マウスカーソル */					cursor: url("画_カニ.png"), auto;
+        								}
+        /* ★リンクホバー時の指定★ */	a:hover {
+        /* 蛍光ペン */						background-color: yellow;
+        								}
+        /* ★本文の指定★ */				p {
+											line-height: 1.6;
+		/*文字サイズ*/						font-size: 14px;
+        								}
+		.body-accordion input {display: none;}
+		.body-accordion label {
+			display: block;
+			font-size: 1.6em;
+			font-weight: bold;
+			cursor: pointer;
+			padding: 8px 0;
+		}
+		.body-accordion label::before {
+			content: "＋ ";
+			font-weight: bold;
+		}
+		.body-accordion input:checked + label::before {
+			content: "－ ";
+		}
+		.body-accordion .content {
+			max-width: 0;	/* 幅を閉じる */
+			overflow: hidden;
+			transition: max-width 0.5s ease;
+			writing-mode: vertical-rl; /* 中身も縦書き */
+		}
+		.body-accordion input:checked ~ .content {
+			max-width: 2000px;	/* 開いたときの幅 */
+		}
+    </style>
+  </head>
+	
   	<head>
 	  <title>ぽ～たる</title>
 	  <meta charset="UTF-8">
@@ -67,88 +114,224 @@
 			<br><a href="https://www1.kaiho.mlit.go.jp/info/hurui-kaizu.html">古い海図をお持ちの方、探しています</a>
 			<br><a href="https://www.mod.go.jp/j/saiyou/index.html">自衛官</a>
 			<br>	～～～～～～～トップ～～～～～～～
-			<!--- ====================================================================== --->
-			<!--- 救急と、その他問い合わせ                                                 --->
-			<!--- ====================================================================== --->
-			<br><a href="救急情報.html" style="color: red; font-weight: bold; font-size: 20px;">
-				<img src="画_花.png" width="30" height="30">
-				救急情報
-			</a>
-			<a href="迷惑電話.html">※迷惑電話、その他通報、リコールについて</a>
-			<br>
-			<!--- ====================================================================== --->
-			<!--- 憲法・法律                                                              --->
-			<!--- ====================================================================== --->
-			<a href="https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm">
-				<img src="画_花.png" width="30" height="30">
-				日本国憲法
-			</a>　
-			<a href="https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E6%B3%95%E5%BE%8B%E4%B8%80%E8%A6%A7">法律一覧</a>　
-			<a href="https://mottai-navi.com/Contents/QCEcoLaw/Kind_of_law.html">法令の種類</a>
-			<br>
-			<!--- ====================================================================== --->
-			<!--- 皇室                                                                   --->
-			<!--- ====================================================================== --->
-			<a href="https://www.kunaicho.go.jp/">
-				<img src="画_花.png" width="30" height="30">
-				皇室
-			</a>
-			<br>　・<a href="https://www.youtube.com/playlist?list=PLhoNlZaJqDLZLjyG9-gFP_lsTyX1H8zIC">皇室アーカイブ</a>
-			<br>　・<a href="https://kyoto-kyuteibunka.or.jp/column/2250/">宮中祭祀</a>
-			<br>　・<a href="https://www.amazon.co.jp/%E3%83%86%E3%83%A0%E3%82%BA%E3%81%A8%E3%81%A8%E3%82%82%E3%81%AB%E2%94%80%E2%94%80%E8%8B%B1%E5%9B%BD%E3%81%AE%E4%BA%8C%E5%B9%B4%E9%96%93-%E5%BE%B3%E4%BB%81%E8%A6%AA%E7%8E%8B/dp/4314012005">
-				徳仁親王 (著)　テムズとともに──英国の二年間</a>
-			<br>　・<a href="https://www.amazon.co.jp/%E6%B0%B4%E9%81%8B%E5%8F%B2%E3%81%8B%E3%82%89%E4%B8%96%E7%95%8C%E3%81%AE%E6%B0%B4%E3%81%B8-%E5%BE%B3%E4%BB%81%E8%A6%AA%E7%8E%8B/dp/4140817720">
-				徳仁親王 (著)　水運史から世界の水へ</a>
-			<br>　・<a href="https://www.kikuyou.or.jp/hanpu/">公益財団法人菊葉文化協会　頒布品</a>
-			<br>　・<a href="https://shoryobu.kunaicho.go.jp/Publication">宮内庁書陵部</a>
-			<br>　・<a href="https://laws.e-gov.go.jp/law/322AC0000000003">皇室典範</a>（<a href="https://www.youtube.com/watch?v=BGFDTWZUSrM">解説</a>）
-			<br>　　皇位継承…<a href="https://www.youtube.com/shorts/-qj__xr-NRc">しくみ</a>（<a href="https://www.youtube.com/watch?v=15fikb4IGF8">５０分ver</a>）
+<!--　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
+<!--　＊　０，救急と防災　　　　　　　　　　　　　　　　　　　　　　　　＊ -->
+<!--　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
+	<div class="body-accordion">
+	<input type="checkbox" id="toggle-bousai">
+	<label for="toggle-bousai">救急と防災</label>
+		<div class="content">
+		<p>
+		<!--- ====================================================================== --->
+		<!--- 救急と、その他問い合わせ                                                 --->
+		<!--- ====================================================================== --->
+		<br><a href="救急情報.html" style="color: red; font-weight: bold; font-size: 20px;">
+			<img src="画_花.png" width="30" height="30">救急情報</a>
+		<a href="迷惑電話.html">※迷惑電話、その他通報、リコールについて</a>
+		<br>
+		<br>+||||||||||||||+
+		<br>　覚えておこう
+		<br>+||||||||||||||+
+		<br>　　<span style="font-size: 2em;">🗾</span><a href="https://dstr.mhr.bosai.go.jp/dedb/">災害年表マップ</a>
+		<br>　　<span style="font-size: 2em;">🗻</span><a href="https://ja.wikipedia.org/wiki/%E5%AF%8C%E5%A3%AB%E5%B1%B1%E3%81%AE%E5%99%B4%E7%81%AB%E5%8F%B2">富士山噴火</a>
+		<br>
+		<br>　　【　平時にできること　】
+		<br>　　　◇食事
+		<br>　　　　<a href="https://hijo-shoku.com/column/healthy/">身体に優しい非常食</a>
+		<br>　　　　<a href="https://itumosimo.jp/babykidsfoods/">子どもの非常食はどうする？赤ちゃんから幼児まで月齢別非常食の備え</a>
+		<br>　　　　<a href="https://feelyou.net/saigaisyoku/">赤ちゃん＆幼児用非常食年齢別リスト！災害備蓄用におすすめ！</a>
+		<br>　　　◇資格　消防設備士
+		<br>　　　　<a href="https://www.youtube.com/channel/UCYCUuGEN_8ENq3YU-uIYRXg">強欲な青木 & 消防設備士</a>
+		<br>　　　　<a href="https://www.youtube.com/playlist?list=PLFY0XdT_E14k5xIBqKOTkD79a1JYfoTxD">LIVEしずおか特集【わたしの防災】</a>
+		<br>　　　　<a href="https://www.fmmc.or.jp/commons/merit/3-1.html">Lアラート（防災アプリ）</a>
+		<br>
+		<br>　　【　災　害　時　】
+		<br>　　　◇衛生
+		<br>　　　　<a href="https://www.youtube.com/shorts/xQMO4tHbm-g">医者が災害時に伝えたいこと５選</a>①
+		<br>　　　　<a href="https://www.youtube.com/shorts/tO_njddhOsQ">医者が災害時に伝えたいこと５選</a>②
+		<br>　　　◇被服
+		<br>　　　　頭髪　断水により、何日もシャワーができずとあらば、坊主にする。
+		<br>　　　　　　　長髪の場合は、三つ編みにする。（おさげが望ましい）
+		<br>　　　　帽子　麦わら帽子をかぶるか、
+		<br>　　　　　　　バンダナを頭にのせて、サンバイザーで固定するのが一番いい。
+		<br>　　　　　　　　　キャップだと頭が熱くなる。
+		<br>　　　　服　　甚平が最適。羽織には長襦袢が最適
+		<br>　　　　　　　　　羽織は浴衣といいたいけど帯が面倒なので、長襦袢にしました。
+		<br>　　　　　　　　　肌着用の衣服なので肌当たりや通気性の問題を考えなくていい。
+		<br>　　　　靴　　＊＊＊
+		<br>
+		</p>
+		</div>
+	</div>
+	  
+<!--　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
+<!--　＊　１，図書館　　　　　　　　　　　　　　　　　　　　　　　　　　＊ -->
+<!--　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
+	  
+	  <div class="body-accordion">
+		<input type="checkbox" id="toggle-tosyokan">
+		<label for="toggle-tosyokan">図書館</label>
+		<div class="content">
+			<p>
 			<!--- ====================================================================== --->
 			<!--- 官報                                                                   --->
 			<!--- ====================================================================== --->
 			<br><a href="https://www.kanpo.go.jp/">
-				<img src="画_花.png" width="30" height="30">
-				官報
-			</a>　
+				<img src="画_花.png" width="30" height="30">官報</a>　
 			<a href="https://legaldoc.jp/">	※最近施行された法令</a>
 			<!--- ====================================================================== --->
-			<!--- 国会                                                                   --->
+			<!--- 憲法・法律                                                              --->
 			<!--- ====================================================================== --->
-			<br><a href="https://www.shugiin.go.jp/internet/index.nsf/html/shiryo_top.htm">
-				<img src="画_花.png" width="30" height="30">
-				国会
-			</a>
+			<a href="https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm">
+				<img src="画_花.png" width="30" height="30">日本国憲法</a>　
+			<a href="https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E6%B3%95%E5%BE%8B%E4%B8%80%E8%A6%A7">法律一覧</a>　
+			<a href="https://mottai-navi.com/Contents/QCEcoLaw/Kind_of_law.html">法令の種類</a>
+			<br>
+			<!--- ====================================================================== --->
+			<!--- 図書館　　                                                              --->
+			<!--- ====================================================================== --->
+			日本の図書館
+			<br>　・<a href="https://www.jla.or.jp/ndc/">日本十進分類法（NDC）</a>
+	  		<br>国立国会図書館
+			<br>　・<a href="https://www.ndl.go.jp/data/catstandards/classification_subject">国立国会図書館分類表（NDLC）</a>
+			<br>　・<a href="https://dl.ndl.go.jp/ja/">国立国会図書館デジタルコレクション</a>
+			<br>　・<a href="https://rekion.dl.ndl.go.jp/">国立国会図書館歴史的音源（れきおん）</a>
+			<br>国立公文書館
+			<br>　・<a href="https://www.digital.archives.go.jp/">国立公文書館デジタルアーカイブ</a>
+			
+			</p>
+		</div>
+	</div>
+	  
+<!--　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
+<!--　＊　２，地図と日本　　　　　　　　　　　　　　　　　　　　　　　　＊ -->
+<!--　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
+	<div class="body-accordion">
+	<input type="checkbox" id="toggle-iroiro">
+	<label for="toggle-iroiro">地図・日本</label>
+		<div class="content">
+			<p>
+		<br>　・日本（ひのもとのくに）
+		<!--- ====================================================================== --->
+		<!--- 皇室                                                                   --->
+		<!--- ====================================================================== --->
+		<a href="https://www.kunaicho.go.jp/">
+			<img src="画_花.png" width="30" height="30">皇室</a>
+		<br><span style="font-size: 2em;">🌎</span><a href="https://kojiki.138shinsekai.com/">神話</a>
+		<br>　・<a href="https://www.youtube.com/playlist?list=PLhoNlZaJqDLZLjyG9-gFP_lsTyX1H8zIC">皇室アーカイブ</a>
+		<br>　・<a href="https://kyoto-kyuteibunka.or.jp/column/2250/">宮中祭祀</a>
+		<br>　・<a href="https://www.amazon.co.jp/%E3%83%86%E3%83%A0%E3%82%BA%E3%81%A8%E3%81%A8%E3%82%82%E3%81%AB%E2%94%80%E2%94%80%E8%8B%B1%E5%9B%BD%E3%81%AE%E4%BA%8C%E5%B9%B4%E9%96%93-%E5%BE%B3%E4%BB%81%E8%A6%AA%E7%8E%8B/dp/4314012005">
+			徳仁親王 (著)　テムズとともに──英国の二年間</a>
+		<br>　・<a href="https://www.amazon.co.jp/%E6%B0%B4%E9%81%8B%E5%8F%B2%E3%81%8B%E3%82%89%E4%B8%96%E7%95%8C%E3%81%AE%E6%B0%B4%E3%81%B8-%E5%BE%B3%E4%BB%81%E8%A6%AA%E7%8E%8B/dp/4140817720">
+			徳仁親王 (著)　水運史から世界の水へ</a>
+		<br>　・<a href="https://www.kikuyou.or.jp/hanpu/">公益財団法人菊葉文化協会　頒布品</a>
+		<br>　・<a href="https://shoryobu.kunaicho.go.jp/Publication">宮内庁書陵部</a>
+		<br>　・<a href="https://laws.e-gov.go.jp/law/322AC0000000003">皇室典範</a>（<a href="https://www.youtube.com/watch?v=BGFDTWZUSrM">解説</a>）
+		<br>　　皇位継承…<a href="https://www.youtube.com/shorts/-qj__xr-NRc">しくみ</a>（<a href="https://www.youtube.com/watch?v=15fikb4IGF8">５０分ver</a>）		
+		<!--- ====================================================================== --->
+		<!--- 基本情報                                                                   --->
+		<!--- ====================================================================== --->
+		<br>　　　統計を見てみよう！　✧📊<a href="https://www.teikokushoin.co.jp/statistics/no1/">【統計】</a>
+		<br>　　　　　　　　　　　　　　　　👇こちらも　<a href="https://www.teikokushoin.co.jp/statistics/no1/">わがマチ・わがムラ</a>
+		<br>　　　自衛隊を見てみよう！✧👷<a href="https://www.mod.go.jp/j/kids/">【自衛隊】</a>
+		<br>　　　一次産業を知ろう！　✧🌳<a href="https://www.maff.go.jp/j/kids/">【農林水産省】</a>
+		<br>　　　水資源を知ろう！　　✧💧<a href="https://www.mlit.go.jp/mizukokudo/mizsei/index.html">【国土交通省】</a>
+		<br>　　　税金を知ろう！　　　✧💰<a href="https://www.mof.go.jp/tax_policy/summary/index.html">【財務省】</a>
+		<br>　　　地方税制度を知ろう！✧💰<a href="https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_01.html">【総務省】</a>
+		<br>　　　　　　　　　　　　　　　　👇こちらも　<a href="https://www.nta.go.jp/taxes/kids/index.htm">税の学習コーナー</a>
+		<!--- ====================================================================== --->
+		<!--- 都道府県                                                               --->
+		<!--- ====================================================================== --->
+		<br><a href="https://www.j-lis.go.jp/spd/map-search/cms_1069.html">
+			<img src="画_花.png" width="30" height="30">都道府県とか市町村とかの公式サイト全国地図</a>
+		<br>　・<a href="https://www.mext.go.jp/a_menu/shotou/zyosei/1296809.htm">～未来につなごう～「みんなの廃校」プロジェクト　</a>
+		<!--- ====================================================================== --->
+		<!--- 国会                                                                   --->
+		<!--- ====================================================================== --->
+		<br><a href="https://www.shugiin.go.jp/internet/index.nsf/html/shiryo_top.htm"><img src="画_花.png" width="30" height="30">国会</a>
 			<a href="https://www.sangiin.go.jp/japanese/kids/html/shikumi/index.html">（解説）</a>　
-			<a href="https://www.gov-online.go.jp/">政府広報オンライン</a>　
-			<a href="https://www.gov-online.go.jp/governmentlinks/">（官公庁サイト一覧）</a>
-			<br>　・<a href="https://www.cas.go.jp/jp/gaiyou/jimu/jinjikyoku/satei_01_05.html">	行政機構図</a>
-			<br>　・（書籍）
+		<br>　・<a href="https://www.gov-online.go.jp/governmentlinks/">（官公庁サイト一覧）</a>
+		<br>　・<a href="https://www.cas.go.jp/jp/gaiyou/jimu/jinjikyoku/satei_01_05.html">	行政機構図</a>
+		<br>　・（書籍）
 			<a href="http://www.iam.or.jp/publication.html">行政機構図</a>　
 			<a href="https://www.kokkaibinran.jp/">国会便覧</a>
-			<br>　・<a href="https://web.archive.org/web/20000303052359/http://www.kantei.go.jp/jp/kids/index.html">総理大臣って？</a>
-			<br>　・<a href="https://political-finance-database.com/">政治資金収支報告書データベース</a>
-			<br>　・<a href="https://www.npo-homepage.go.jp/sitemap">NPO法人</a>
-			<!--- ====================================================================== --->
-			<!--- 都道府県                                                               --->
-			<!--- ====================================================================== --->
-			<br><a href="https://www.j-lis.go.jp/spd/map-search/cms_1069.html">
-				<img src="画_花.png" width="30" height="30">
-				都道府県とか市町村とかの公式サイト全国地図
-			</a>
-			<br>　・<a href="https://www.mext.go.jp/a_menu/shotou/zyosei/1296809.htm">～未来につなごう～「みんなの廃校」プロジェクト　</a>
-			<!--- ====================================================================== --->
-			<!--- その他                                                                 --->
-			<!--- ====================================================================== --->
-			<br><a href="地域インフラ.html"><img src="画_花.png" width="30" height="30">地域インフラ</a>　／　
-			<a href="研究.html">研究</a>　／　
-			<a href="おべんきょ.html">学習</a>
-			<br>	～～～～～～～生活の知恵～～～～～～～
-			<br><span style="font-size: 2em;">✅</span><a href="https://happylilac.net/sk1809191133.html#google_vignette">身近なマーク</a>
-			<br><span style="font-size: 2em;">🌌</span><a href="コンビニでできること.html">コンビニでできること</a>
-			<br><span style="font-size: 2em;">🐧</span><a href="庭づくり.html">庭づくり</a>
-			<br><span style="font-size: 2em;">🌎</span><a href="https://kojiki.138shinsekai.com/">神話</a>
-			<br><span style="font-size: 2em;">🧭</span><a href="https://www.mod.go.jp/j/surround/index.html">最近の国際軍事情勢（防衛省・自衛隊）</a>
-			<br>　・<a href="https://www.kaiho.mlit.go.jp/03kanku/information/cat/post-17.html">海上保安資料館 横浜館（工作船展示）</a>
+		<br>　・<a href="https://web.archive.org/web/20000303052359/http://www.kantei.go.jp/jp/kids/index.html">総理大臣って？</a>
+		<br>　・<a href="https://political-finance-database.com/">政治資金収支報告書データベース</a>
+		<br>　・<a href="https://www.npo-homepage.go.jp/sitemap">NPO法人</a>
+		<br>　・地図
+		<br>　　<a href="https://www.gsi.go.jp/CHIRIKYOUIKU/shien.html">地理教育の道具箱（国土地理院）</a>
+		<br>　　<a href="https://www.gsi.go.jp/kohokocho/map-sign-tizukigou-2022-itiran.html">地図記号</a>
+		<br>　　<a href="https://ktgis.net/">谷謙二研究室web地図</a>
+		</div>
+	</div>
+
+<!--　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
+<!--　＊　３，戦争・防衛　　　　　　　　　　　　　　　　　　　　　　　　＊ -->
+<!--　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
+	<div class="body-accordion">
+		<input type="checkbox" id="toggle-war">
+		<div class="content">
+			<label for="toggle-war"><span style="font-size: 2em;">🧭</span>最近の国際軍事情勢、他</label>
+			<p>　・情報　👨🏻‍✈️<a href="https://www.mod.go.jp/j/surround/index.html">防衛省・自衛隊</a>
+			<br>　　　　　🗾<a href="https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E5%90%88%E6%88%A6%E4%B8%80%E8%A6%A7">日本の合戦一覧</a>　
+				（<a href="https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%97%A5%E6%9C%AC%E5%B8%9D%E5%9B%BD%E3%81%AE%E6%88%A6%E9%97%98%E4%B8%80%E8%A6%A7">近世</a>）
+			<br>　　　　　🌎<a href="https://ja.wikipedia.org/wiki/%E6%88%A6%E4%BA%89%E4%B8%80%E8%A6%A7">世界</a>
+			<br>　　　　　　～過去に起きた戦争の記憶、日本人談～
+			<br>　　　　　　　<a href="https://www.youtube.com/watch?v=7mq0lbOMuao">【2ch歴史スレ】ひいじいさんの日記が歴史的価値高すぎてワロタww【ゆっくり解説】</a>
+			<br>　・展示　<a href="https://www.kaiho.mlit.go.jp/03kanku/information/cat/post-17.html">海上保安資料館 横浜館（工作船展示）</a>
+			</p>
+		</div>
+	</div>
+	  
+<!--　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
+<!--　＊　３，暮らしの学習　　　　　　　　　　　　　　　　　　　　　　　＊ -->
+<!--　＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
+    <div class="body-accordion">
+	<input type="checkbox" id="toggle-obenkyo">
+	<label for="toggle-obenkyo">生活</label>
+		<div class="content">
+		<!--- ====================================================================== --->
+		<!--- その他                                                                 --->
+		<!--- ====================================================================== --->
+		<p>	～～～～～～～生活の知恵～～～～～～～
+		<br><span style="font-size: 2em;">✅</span><a href="https://happylilac.net/sk1809191133.html#google_vignette">身近なマーク</a>
+		<br><span style="font-size: 2em;">🌌</span><a href="コンビニでできること.html">コンビニでできること</a>
+		<br><span style="font-size: 2em;">🐧</span><a href="庭づくり.html">庭づくり</a>
+		<br><a href="地域インフラ.html"><img src="画_花.png" width="30" height="30">地域インフラ</a>　／　<a href="研究.html">研究</a>
+			<!-- <a href="おべんきょ.html">学習</a> -->
+		<h1>学習</h1>
+    	<br>　・<a href="マナーとか作法とか.html">マナー</a>
+		<br>　・<a href="家庭料理.html">家庭料理</a>
+		<br>　・<a href="裁縫.html">裁縫</a>
+		<br>　・<a href="はつでん.html">＜準備中＞えねるぎー</a>
+		<br>　・<a href="ぶつりゅう.html">＜準備中＞くるま・物流</a>
+				<!--■物流ページに組み込み
+				<h3>のりもの</h3>
+				<br><a href="https://www.transport-pf.or.jp/site_map/">のりもの</a>（<a href="https://www.mlit.go.jp/road/sign/sign/douro/ichiran.pdf">標識一覧</a>）
+				<br><a href="https://jta.or.jp/ippan/hayawakari.html">トラック</a>
+				<br><a href="https://www.torakyo-hiroshima.or.jp/customer/index.html">物流</a>
+				</p>
+				-->
+		<br>　・昔ばなし
+	  	<br>　　<a href="https://www.douwa-douyou.jp/index.shtml">昔話</a>　<a href="https://onceuponatime.co.jp/">まんが日本昔話</a>
+		<br>　　<a href="https://minwanoheya.jp/">民話</a>　<a href="https://www.worldfolksong.com/index.html">民謡・童謡</a>
+		<br>　　<a href="https://www.syobun.co.jp/app/index.html">古文</a>
+		<br>　　<a href="https://www.ndl.go.jp/math/s1/1.html">和算</a>
+		<br>　　<a href="https://story.nakagawa-masashichi.jp/craft_post?by=material">工芸百貨辞典</a>
+		</p>
+		</div>
+	</div>
+	<div class="body-accordion">
+		<input type="checkbox" id="toggle-kouza">
+		<label for="toggle-kouza">講座</label>
+		<div class="content">
+			<p>
+				・<a href="https://www.youtube.com/playlist?list=PLMvvhD9xvwfl1AGECPUeW_L9NWLdf7pRK">食品表示ミス防止講座（農林水産省）</a>
+				<br>・<a href="https://www.youtube.com/@nurse.no.itadaki/playlists">ナースの頂チャンネル - youtubeチャンネル - </a>
+			</p>
+		</div>
+	</div>
+
 			<br>↓↓↓特集↓↓↓
 			<br><a href="インターネット.html"><img src="インターネット.png"></a>
 			<br>　・ゲーム　<a href="https://ccfolia.com/">ココフォリア</a>
