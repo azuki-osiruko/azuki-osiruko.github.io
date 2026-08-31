@@ -5,26 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+		body {
+		/* フォント */							font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* 背景色   */							background-color: lightblue;
+        /* マウスポインター */					cursor: url("画_カニ.png"), auto;
+        /* マウスポインター（リンク）*/			a {cursor: url("画_カニ.png"), auto;}
+        /* 文字に蛍光ペンを引く（リンク） */		a:hover {background-color: yellow;}
+		/* 文字の色（リンク）*/					a {color: #2a4bd7; /* 落ち着いた青 */}
+		}
+		/* 行の高さ */
+		p {
+			line-height: 1.6;
+		}
+		/* 表 */
 		table {
 		  border-collapse: collapse;
 		  width: 70%;
 		}
-
 		th, td {
 		  border: 1px solid #ccc;
 		  padding: 8px;
 		}
-
-		/* ホバー時（蛍光ペン） */
+		/* 表　ホバー時（蛍光ペン） */
 		tr:hover {
 		  background-color: #4d5aaf;
 		  color: #ffffff;
 		}
 		tr:hover a {
 		  color: #ffffff;
-		}
-		a {
-		  color: #2a4bd7; /* 落ち着いた青 */
 		}
     </style>
   </head>
