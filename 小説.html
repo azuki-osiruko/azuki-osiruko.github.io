@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>ぽ～たる</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        /* フォント */
+        font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* 背景色   */
+        background-color: lightblue;
+        /* マウスポインター */
+        cursor: url("画_カニ.png"), auto;
+        /* リンクの上でも同じカーソルにする */
+        a {
+          cursor: url("画_カニ.png"), auto;
+        }
+        /* ホバー時（蛍光ペン） */
+        a:hover {
+          background-color: yellow;
+        }
+        p {
+          line-height: 1.6;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>ネット小説</h1>
+    <h2>サイト一覧</h2>
+    <p>・<a href="https://syosetu.com/">小説家になろう！</a>（小説投稿サイト）
+		<br>・<a href="https://yomou.syosetu.com/">小説を読もう！</a>（「小説家になろう」に投稿された小説を読めるサイト）
+    <br>・<a href="https://www.alphapolis.co.jp/">アルファポリス</a>
+    <br>・<a href="https://novelup.plus/">ノベルアップ＋</a>
+    <br>・<a href="https://kakuyomu.jp/">カクヨム</a>
+    <br>・<a href="https://estar.jp/discover">エブリスタ</a>
+    <br>・<a href="https://novel.fc2.com/">FC2小説</a>
+    <br>・<a href="https://www.no-ichigo.jp/search">野いちご</a>（女性向け）
+    <br>・<a href="https://www.berrys-cafe.jp/">ベリーズカフェ</a>（女性向け）
+    <br>・<a href="https://syosetu.org/">ハーメルン</a>（二次創作中心）
+
+    <br>個人サイト小説
+    <br>・<a href="https://quest-mile.com/entry/kozin-site-novel/">おすすめ記事</a>
+    </p>
+
+    <script>
+      document.querySelectorAll('a').forEach(link => {
+        link.setAttribute('target', '_blank');
+				link.setAttribute('rel', 'noopener noreferrer');
+			});
+		</script>
+  </body>
+</html>
