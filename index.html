@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="ja">
+  	<head>
+	  <title>ぽ～たる</title>
+	  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-		/* ★ページの指定★ */			body {
-        /* フォント */						font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
-        /* 背景色   */						background-color: lightblue;
-        /* マウスポインター */        		cursor: url("画_カニ.png"), auto;
-		/* 縦書き（右→左） */				writing-mode: vertical-rl;
-		/* 句読点や数字を縦向きに */			text-orientation: upright;
-										}
-		/* ★リンクの指定★ */			a {
-        /* マウスカーソル */					cursor: url("画_カニ.png"), auto;
-        								}
-        /* ★リンクホバー時の指定★ */	a:hover {
-        /* 蛍光ペン */						background-color: yellow;
-        								}
-        /* ★本文の指定★ */				p {
+		/* ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ */
+		/* ＊ＣＳＳ　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　＊ */
+		/* ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ */
+		/* 【ページ】*/						body {
+		/* ・読み込み時のフェードイン    */	opacity: 0;
+  											animation: fadeIn 0.8s ease forwards;
+        /* ・フォント                  */	font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* ・背景色                    */	background-color: lightblue;
+        /* ・マウスポインター           */	cursor: url("画_カニ.png"), auto;
+		/* ・縦書き（右→左）            */	writing-mode: vertical-rl;
+		/* ・縦書き（句読点や数字）      */	text-orientation: upright;
+											}
+		/*【リンク】*/						a {
+        /* ・マウスカーソル            */	cursor: url("画_カニ.png"), auto;
+		/* ・リンクにつく線をなくす     */	text-decoration: none;
+        									}
+        /*【リンクホバー】*/					a:hover {
+        /* ・蛍光ペン                  */	background-color: yellow;
+        									}
+        /*【本文】*/							p {
 											line-height: 1.6;
-		/*文字サイズ*/						font-size: 14px;
-        								}
+		/* ・文字サイズ                */	font-size: 14px;
+        									}
+
+		/* -----【フェードアウト】ページ離脱時----- */
+		.fade-out {
+			opacity: 0;
+			transition: opacity 0.8s ease;
+		}
+		/* -----【アコーディオン】折り畳み表示----- */
 		.body-accordion input {display: none;}
 		.body-accordion label {
 			display: block;
@@ -43,45 +59,9 @@
 		.body-accordion input:checked ~ .content {
 			max-width: 2000px;	/* 開いたときの幅 */
 		}
-    </style>
-  </head>
-	
-  	<head>
-	  <title>ぽ～たる</title>
-	  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <style>
-	    body {
-			/* 読み込み時のフェードイン */	opacity: 0;
-  											animation: fadeIn 0.8s ease forwards;
-			/* マウスポインター */			cursor: url("画_カニ.png"), auto;
-			/* 背景色   */					background-color: lightblue;
-			/* フォント */					font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
-			/* 縦書き（右→左） */			writing-mode: vertical-rl;
-			/* 句読点や数字を縦向きに */		text-orientation: upright;
-	    }
 		@keyframes fadeIn {
 			to { opacity: 1; }
 		}
-		/* ページ離脱時のフェードアウト */
-		.fade-out {
-			opacity: 0;
-			transition: opacity 0.8s ease;
-		}
-		  /* リンクの基本指定 */
-		  a {
-			  /* マウスカーソル */			cursor: url("画_カニ.png"), auto;
-			  /* リンクにつく線をなくす */	text-decoration: none;
-		  }
-		  /* リンクのホバー指定 */
-		  a:hover {
-			  /*ホバー時（蛍光ペン）*/		background-color: yellow;
-		  }
-		  /* 本文の基本指定 */
-		  p {
-			  /*行間*/						line-height: 1.6;
-			  /*文字サイズ*/					font-size: 14px;
-		  }
     </style>
     </head>
 	<body>
