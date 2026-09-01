@@ -6,23 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
-        /* フォント */
-        font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
-        /* 背景色   */
-        background-color: lightblue;
-        /* マウスポインター */
-        cursor: url("画_カニ.png"), auto;
-        /* リンクの上でも同じカーソルにする */
-        a {
-          cursor: url("画_カニ.png"), auto;
-        }
-        /* ホバー時（蛍光ペン） */
-        a:hover {
-          background-color: yellow;
-        }
-        p {
-          line-height: 1.6;
-        }
+		/* 縦書き（右→左） */					writing-mode: vertical-rl;
+		/* 句読点や数字を縦向きに */				text-orientation: upright;
+        /* フォント */							font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* 背景色   */							background-color: lightblue;
+        /* マウスポインター */					cursor: url("画_カニ.png"), auto;
+        /* マウスポインター（リンク上）*/			a { cursor: url("画_カニ.png"), auto; }
+        /* 蛍光ペン【黄色】（リンク上） */			a:hover { background-color: yellow; }
+        										p { line-height: 1.6; }
       }
     </style>
   </head>
