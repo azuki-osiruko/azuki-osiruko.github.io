@@ -11,10 +11,17 @@
         /* フォント */							font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
         /* 背景色   */							background-color: lightblue;
         /* マウスポインター */					cursor: url("画_カニ.png"), auto;
-        /* マウスポインター（リンク上）*/			a { cursor: url("画_カニ.png"), auto; }
-        /* 蛍光ペン【黄色】（リンク上） */			a:hover { background-color: yellow; }
-        										p { line-height: 1.6; }
-      }
+      }			
+		a { 
+			cursor: url("画_カニ.png"), auto;	/* リンクの上でも同じカーソルにする */
+			text-decoration: none;				/* リンクにつく線をなくす     */
+		}
+		a:hover { 
+			background-color: yellow;			/* リンクに蛍光ペン【黄色】 */	
+		}
+    	p {
+			line-height: 1.6;
+		}
     </style>
   </head>
   <body>
