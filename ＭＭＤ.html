@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>ぽ～たる</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        /* フォント */
+        font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* 背景色   */
+        background-color: lightblue;
+        /* マウスポインター */
+        cursor: url("画_カニ.png"), auto;
+        /* リンクの上でも同じカーソルにする */
+        a {
+          cursor: url("画_カニ.png"), auto;
+        }
+        /* ホバー時（蛍光ペン） */
+        a:hover {
+          background-color: yellow;
+        }
+        p {
+          line-height: 1.6;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>ＭＭＤ</h1>
+    <h2>参考動画</h2>
+    <p>・<a href="https://www.nicovideo.jp/watch/sm30103595">【MMD】流れる涙モデル解説</a>（ニコニコ投稿主6666）
+    </p>
+
+    <script>
+      document.querySelectorAll('a').forEach(link => {
+        link.setAttribute('target', '_blank');
+				link.setAttribute('rel', 'noopener noreferrer');
+			});
+		</script>
+  </body>
+</html>
