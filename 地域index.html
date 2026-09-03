@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+  	<head>
+	  <title>ぽ～たる</title>
+	  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <style>
+		/* ページ離脱時のフェードアウト */
+		.fade-out {
+			opacity: 0;
+			transition: opacity 0.8s ease;
+		}
+	    body {
+			/* フォント */
+			font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+			/* 背景色   */
+			background-color: lightblue;
+			/* マウスポインター */
+			cursor: url("画_カニ.png"), auto;
+			/* ページ切り替え（読み込み時のフェードイン） */
+			opacity: 0;
+  			animation: fadeIn 0.8s ease forwards;	
+	    }
+		@keyframes fadeIn {
+			to { opacity: 1; }
+		}
+		  /* リンクの上でも同じカーソルにする */
+		  a {
+			  cursor: url("画_カニ.png"), auto;
+		  }
+		  /* リンクホバー時（蛍光ペン） */
+		  a:hover {
+			  background-color: yellow;
+		  }
+		  p {
+			  line-height: 1.6;
+		  }
+		  
+		  /* 行全体のホバー反応 */
+		  .pref-row {
+			  padding: 2px 4px;
+			  transition: background-color .3s ease;
+		  }
+		  /* 行にホバーしたら背景がふわっと */
+		  .pref-row:hover {
+			  background-color: rgba(28, 180, 211, 0.15);
+		  }
+		  /* 都道府県名 */
+		  .pref-row .pref {
+			  color: #1cb4d3;				/*都道府県名の文字色：夏っぽい水色(シアン)*/
+			  font-weight: bold;			/*太字*/
+			  text-decoration: none;		/*下線削除*/
+			  transition: background-color .5s, color .5s;
+			  padding: 2px 4px;
+			  border-radius: 4px;
+		  }
+		  /* 行にホバーした時だけ、都道府県名が色反転 */
+		  .pref-row:hover .pref {
+			  background-color: #1cb4d3;	/*都道府県名の背景色：夏っぽい水色(シアン)*/
+			  font-weight: bold;			/*太字*/
+			  color: #fff;					/*文字色：白*/
+			  text-decoration: none;		/*下線削除*/
+		  }
+		  .region {
+			  background-color: rgba(255, 255, 255, 0.6); /* 薄い白 */
+			  padding: 8px 12px; 			/* 内側の余白 */
+			  border-radius: 8px; 			/* 角丸 */
+			  margin: 10px 0;				/* 上下の間隔 */
+		  }
+
+		  .links-list {
+			  list-style: none;
+			  padding: 0;
+			  margin: 0;
+		  }
+		  .links-list li {
+			  margin: 6px 0;
+		  }
+		  
+	  </style>
+    </head>
+  
+	<body>
+		<h1>地域index</h1>
+    <p><a href="地域インフラ.html">インフラ</a>　<a href="地方行財政.html">地方行財政</a>　<a href="建物.html">建物</a>　<a href="全国トピックス.html">地域のトピック</a>
+    <br>
+    <br>-------おでかけ-------</p>
+			<ul class="links-list">
+				<li><a href="https://onsenguide.org/">温泉</a><a href="https://yuru-to.net/overview/">（マップから）</a>　
+					<a href="https://www.michi-no-eki.jp/">道の駅</a><a href="https://www.mlit.go.jp/road/Michi-no-Eki/list.html">（？）</a></li>
+				<li><a href="https://roote.ekispert.net/rmap">全国路線図</a></li>
+			</ul>
+		<p>-------　Vlog　-------</p>
+			<ul class="links-list">
+				<li><a href="https://www.youtube.com/@zundahouse/playlists">ずんだハウス</a></li>
+			</ul>
+    <p>-------　通販　-------</p>
+			<ul class="links-list">
+				<li><a href="https://www.jp-ts.jp/">郵便局物販サービス</a></li>
+				<li><a href="https://www.michi-no-eki.jp/stations/mall">全国道の駅モール</a></li>
+				<li><a href="https://www.ja-town.com/shop/f/f0">JAタウン</a></li>
+			</ul>
+		
+		<footer style="margin-top: 50px; color: gray;">
+			<small>
+				このサイトは個人制作のリンクポータルです。
+				<br>
+				各リンク先の内容・運営はリンク先各団体に帰属します。
+			</small>
+		</footer>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const links = document.querySelectorAll("a");
+				links.forEach(link => {
+					
+					const url = link.getAttribute("href");
+					
+					// popover トリガーはフェードアウト処理を無視
+					if (link.hasAttribute("popovertarget")) return;
+					
+					// 外部リンクは新しいタブで開く
+					if (url && url.startsWith("http")) {
+						link.target = "_blank";
+						link.rel = "noopener noreferrer";
+						return; // 外部リンクはフェードアウトしない
+					}
+					
+					// 内部リンクだけフェードアウト
+					link.addEventListener("click", e => {
+						if (!url || url.startsWith("#")) return;
+						e.preventDefault();
+						document.body.classList.add("fade-out");
+						setTimeout(() => {window.location = url;}, 500);
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
