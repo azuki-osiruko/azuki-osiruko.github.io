@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>ぽ～たる</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        /* フォント */
+        font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        /* 背景色   */
+        background-color: lightblue;
+        /* マウスポインター */
+        cursor: url("画_カニ.png"), auto;
+        /* リンクの上でも同じカーソルにする */
+        a {
+          cursor: url("画_カニ.png"), auto;
+        }
+        /* ホバー時（蛍光ペン） */
+        a:hover {
+          background-color: yellow;
+        }
+        p {
+          line-height: 1.6;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>買い物</h1>
+    <h2>通販</h2>
+    <p>・<a href="https://www.rakuten.co.jp/">楽天市場</a>
+    <br>・<a href="https://www.rakuten.co.jp/office-vender/">オフィスベンダー</a>
+    <br>・<a href="https://onamae.hankoya.com/">お名前つけ.NET</a>
+		<br>・<a href="https://www.e-kurashi.coop/shop/top/index.html">くらしと生協</a>
+    <br>・<a href="https://moponline.mitsui-shopping-park.com/ec/">三井アウトレットパークオンライン</a>
+    <br>・<a href="https://www.tokyointerior-onlineshop.com/">東京インテリア公式通販サイト</a>
+    <br>・<a href="https://www.igusakotatsu.com/">い草屋さんこたつ屋さん</a>
+    <br>・<a href="https://payid.jp/shopping">PayID</a>
+    <br>・<a href="https://www.creema.jp/">Creema</a>（女性向け）
+    <br>・<a href="https://minne.com/">minne</a>（女性向け）
+    <br>・<a href="https://www.2ndstreet.jp/">2nd STREET</a>（女性向け）
+    <br>・<a href="https://auctions.yahoo.co.jp/">ヤフオク！</a>（二次創作中心）
+	<br>
+    </p>
+
+    <script>
+      document.querySelectorAll('a').forEach(link => {
+        link.setAttribute('target', '_blank');
+				link.setAttribute('rel', 'noopener noreferrer');
+			});
+		</script>
+  </body>
+</html>
