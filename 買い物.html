@@ -23,6 +23,27 @@
         p {
           line-height: 1.6;
         }
+		  .body-accordion input {display: none;}
+		  .body-accordion label {
+			  display: block;
+			  font-size: 1.6em;
+			  font-weight: bold;
+			  cursor: pointer;
+			  padding: 8px 0;
+		  }
+		  .body-accordion label::before {
+			  content: "＋ ";
+			  font-weight: bold;
+		  }
+		  .body-accordion input:checked + label::before {content: "－ ";}
+		  .body-accordion .content {
+			  max-height: 0;
+			  overflow: hidden;
+			  transition: max-height 0.5s ease;
+		  }
+		  .body-accordion input:checked ~ .content {
+			  max-height: 5000px; /* 十分大きければOK */
+		  }
       }
     </style>
   </head>
@@ -30,21 +51,93 @@
   <body>
     <h1>買い物</h1>
     <h2>通販</h2>
-    <p>・<a href="https://www.rakuten.co.jp/">楽天市場</a>
-    <br>・<a href="https://www.rakuten.co.jp/office-vender/">オフィスベンダー</a>
-    <br>・<a href="https://onamae.hankoya.com/">お名前つけ.NET</a>
-		<br>・<a href="https://www.e-kurashi.coop/shop/top/index.html">くらしと生協</a>
-    <br>・<a href="https://moponline.mitsui-shopping-park.com/ec/">三井アウトレットパークオンライン</a>
-    <br>・<a href="https://www.tokyointerior-onlineshop.com/">東京インテリア公式通販サイト</a>
-    <br>・<a href="https://www.igusakotatsu.com/">い草屋さんこたつ屋さん</a>
-    <br>・<a href="https://payid.jp/shopping">PayID</a>
-    <br>・<a href="https://www.creema.jp/">Creema</a>（女性向け）
-    <br>・<a href="https://minne.com/">minne</a>（女性向け）
-    <br>・<a href="https://www.2ndstreet.jp/">2nd STREET</a>（女性向け）
-    <br>・<a href="https://auctions.yahoo.co.jp/">ヤフオク！</a>（二次創作中心）
-	<br>
-    </p>
-
+	  <div class="body-accordion">
+		  <input type="checkbox" id="toggle-Rakuten">
+		  <label for="toggle-Rakuten">楽天市場</label>
+		  <div class="content">
+			  <p>👉<a href="https://www.rakuten.co.jp/">楽天市場</a></p>
+				  <ol>
+					  <li>楽天直営
+						  <ul>
+							  <li>[医薬品・日用品]<a href="https://24.rakuten.co.jp/">楽天２４</a></li>
+							  <li>[服・雑貨]<a href="https://brandavenue.rakuten.co.jp/">Rakuten Fashion</a></li>
+							  <li>[本・ゲーム]<a href="https://books.rakuten.co.jp/">楽天ブックス</a></li>
+						  </ul>
+					  </li>
+					  <li>【出店】文具・雑貨
+						  <ul>
+							  <li><a href="https://www.rakuten.co.jp/hankoya/">ハンコヤドットコム楽天市場店</a>[東京]</li>
+							  <li><a href="https://www.rakuten.co.jp/office-vender/">オフィスベンダー</a>[宮城]</li>
+							  <li><a href="https://www.rakuten.co.jp/shitamachi-shop/">下町ダンボール楽天市場店</a>[東京]</li>
+						  </ul>
+					  </li>
+				  </ol>
+		  </div>
+	  </div>
+	  <div class="body-accordion">
+		  <input type="checkbox" id="toggle-iroiro">
+		  <label for="toggle-iroiro">公式通販（いろいろ）</label>
+		  <div class="content">
+			  <ol>
+				  <li>総合
+					  <ul>
+						  <li><a href="https://www.e-kurashi.coop/shop/top/index.html">くらしと生協</a></li>
+						  <li><a href="https://payid.jp/shopping">PayID</a></li>
+						  <li><a href="https://moponline.mitsui-shopping-park.com/ec/">三井アウトレットパークオンライン</a></li>
+						  <li><a href="https://www.2ndstreet.jp/">2nd STREET</a></li>
+					  </ul>
+				  </li>
+				  <li>ホームセンター系
+					  <ul>
+						  <li><a href="https://www.loft.co.jp/store/">LoFtネットストア</a></li>
+						  <li><a href="https://hands.net/cate/">ハンズネットストア</a></li>
+						  <li><a href="https://www.cainz.com/">カインズ</a></li>
+						  <li><a href="https://www.vivahome.com/">ビバ・ムサシオンライン</a></li>
+						  <li><a href="https://www.kohnan-eshop.com/shop/default.aspx">コーナンeショップ</a>
+						  <li><a href="https://nafco-online.com/">ナフコオンラインストア</a></li>
+						  <li><a href="https://www.dcm-ekurashi.com/">DCMオンライン</a></li>
+						  <li><a href="https://www.komeri.com/shop/default.aspx">コメリドットコム</a></li>
+						  <li><a href="https://shop.sunday.co.jp/">SUNDAYネットショップ</a></li>
+					  </ul>
+				  </li>
+				  <li>ハンドメイド
+					  <ul>
+						  <li><a href="https://www.creema.jp/">Creema</a></li>
+						  <li><a href="https://minne.com/">minne</a></li>
+					  </ul>
+				  </li>
+			  </ol>
+		  </div>
+	  </div>
+	  <div class="body-accordion">
+		  <input type="checkbox" id="toggle-senmon">
+		  <label for="toggle-senmon">公式通販（専門）</label>
+		  <div class="content">
+			  <ol>
+				  <li>服・コスメ・雑貨
+					  <ul>
+						  <li>[総合]<a href="https://shop.sanrio.co.jp/">サンリオ</a></li>
+						  <li>[総合]<a href="https://zozo.jp/">ZOZOTOWN</a></li>
+						  <li>[服]<a href="https://www.canshop.jp/">CAN ONLINE SHOP</a></li>
+						  <li>[服]<a href="https://store.sanyo-shokai.co.jp/">SANYO Online STORE</a></li>
+						  <li>[雑貨]<a href="https://jp.daisonet.com/">ダイソーネットストア</a></li>
+						  <li>[雑貨]<a href="https://sunho.store/">サン宝石</a></li>
+				  <li>文具
+					  <ul>
+						  <li>[判子]<a href="https://onamae.hankoya.com/">お名前つけ.NET</a></li>
+						  <li>[段ボール]<a href="https://ushikon.ocnk.net/">下町ダンボール 清澄白河店</a></li>
+					  </ul>
+				  </li>
+				  <li>家具
+					  <ul>
+						  <li><a href="https://www.tokyointerior-onlineshop.com/">東京インテリア公式通販サイト</a></li>
+						  <li><a href="https://www.igusakotatsu.com/">い草屋さんこたつ屋さん</a></li>
+					  </ul>
+				  </li>
+			  </ol>
+		  </div>
+	  </div>
+	  <p>・<a href="https://auctions.yahoo.co.jp/">ヤフオク！</a></p>
     <script>
       document.querySelectorAll('a').forEach(link => {
         link.setAttribute('target', '_blank');
