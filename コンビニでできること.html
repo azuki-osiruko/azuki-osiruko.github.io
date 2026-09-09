@@ -6,32 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
-        /* フォント */
-        font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
-        /* 背景色   */
-        background-color: lightblue;
-        /* マウスポインター */
-        cursor: url("画_カニ.png"), auto;
-        /* リンクの上でも同じカーソルにする */
-        a {
-          cursor: url("画_カニ.png"), auto;
-        }
-        /* ホバー時（蛍光ペン） */
-        a:hover {
-          background-color: yellow;
+        font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;		/* フォント */
+        background-color: lightblue;		/* 背景色   */
+        cursor: url("画_カニ.png"), auto;    /* カーソル  */
+      }
+		a {
+			cursor: url("画_カニ.png"), auto;	/* リンクの上でも同じカーソルにする */
+		}
+		a:hover {
+          background-color: yellow;	/* ホバー時（蛍光ペン） */
         }
         p {
           line-height: 1.6;
         }
-      }
+		  .video-box {
+			  position: relative;
+			  width: 100%;
+			  max-width: 900px;   /* 横幅の上限 */
+			  height: 300px;      /* 好きな高さにできる */
+			  margin: 20px auto;  /* 中央寄せ */
+			  overflow: hidden;
+			  border-radius: 12px; /* 角丸でかわいく */
+			  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+		  }
+		  .video-box iframe {
+			  width: 100%;
+			  height: 100%;
+			  pointer-events: none; /* 背景扱いにする */
+		  }
     </style>
   </head>
-    
+	<body>
     <h1>コンビニでできること</h1>
-	<iframe width="822" height="462" src="https://www.youtube.com/embed/TlxIBGcJJow?list=RDTlxIBGcJJow" 
-		title="day after tomorrow　Starry Heavens" frameborder="0" 
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<div class="video-box">
+  <iframe
+    src="https://www.youtube.com/embed/TlxIBGcJJow?autoplay=1&mute=1&controls=0&loop=1&playlist=TlxIBGcJJow"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+  ></iframe>
+</div>
     <p>
 		<a href="https://www.sej.co.jp/services/multicopy.html">セブンイレブン</a>
 		<br><a href="https://www.lawson.co.jp/service/others/multicopy/">ローソン</a>
