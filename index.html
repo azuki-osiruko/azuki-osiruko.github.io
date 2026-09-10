@@ -13,7 +13,6 @@
 		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
 		body {
 			/* 読み込み時のフェードイン */
-			opacity: 0;
   			animation: fadeIn 0.8s ease forwards;
 			/* フォント */
         	font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
@@ -97,7 +96,8 @@
 			max-width: 2000px;	/* 開いたときの幅 */
 		}
 		@keyframes fadeIn {
-			to { opacity: 1; }
+			from { opacity: 0; }
+			to   { opacity: 1; }
 		}
     </style>
     </head>
