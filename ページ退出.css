@@ -1,0 +1,5 @@
+/* -----【フェードアウト】ページ離脱時----- */
+.fade-out {
+	opacity: 0;
+	transition: opacity 0.8s ease;
+}
