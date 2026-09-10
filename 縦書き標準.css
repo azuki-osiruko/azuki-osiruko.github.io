@@ -1,0 +1,29 @@
+/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+/* ページ全体の標準設定                                              */
+/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+body {
+  animation:         fadeIn 0.8s ease forwards;  /* 読み込み時のフェードイン */
+  font-family:       'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;  /* フォント */
+	background-color:  lightblue;  /* 背景色 */
+	cursor:            url("画_カニ.png"), auto;  /* マウスポインター */
+	writing-mode:      vertical-rl;    /* 縦書き（右→左） */
+	text-orientation:  upright;        /* 縦書き（句読点や数字） */
+}
+/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+/* リンク                                                          */
+/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+a {
+  cursor:            url("画_カニ.png"), auto;  /* マウスカーソル */
+  text-decoration:   none;  /* リンクにつく線をなくす */
+}
+a:hover {
+  /*【リンクホバー】*/
+  background-color:  yellow;  /* 蛍光ペン */
+}
+/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+/* <p>タグ内                                                       */
+/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+p {
+  line-height:        1.6;
+	font-size:          14px;  /* 文字サイズ */
+}
