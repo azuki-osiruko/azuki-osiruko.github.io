@@ -17,3 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+window.addEventListener("pageshow", function(event) {
+  if (event.persisted) {
+    // 戻る時（bfcache復帰）は fadeIn を無効化
+    document.body.style.animation = "none";
+    document.body.style.opacity = "1";
+  }
+});
