@@ -22,32 +22,10 @@
     	p {
 			line-height: 1.6;
 		}
-		/* -----【アコーディオン】折り畳み表示----- */
-		.body-accordion input {display: none;}
-		.body-accordion label {
-			display: block;
-			font-size: 1.6em;
-			font-weight: bold;
-			cursor: pointer;
-			padding: 8px 0;
-		}
-		.body-accordion label::before {
-			content: "＋ ";
-			font-weight: bold;
-		}
-		.body-accordion input:checked + label::before {
-			content: "－ ";
-		}
-		.body-accordion .content {
-			max-width: 0;	/* 幅を閉じる */
-			overflow: hidden;
-			transition: max-width 0.5s ease;
-			writing-mode: vertical-rl; /* 中身も縦書き */
-		}
-		.body-accordion input:checked ~ .content {
-			max-width: 2000px;	/* 開いたときの幅 */
-		}
     </style>
+	<!-- 外部CSSファイルを読み込む -->
+	<link rel="stylesheet" href="縦書きアコーディオン.css">
+	<link rel="stylesheet" href="ページ退出.css">
   </head>
   <body>
     <h1>家庭料理レシピ</h1>
@@ -214,6 +192,6 @@
         link.setAttribute('target', '_blank');
 				link.setAttribute('rel', 'noopener noreferrer');
 			});
-		</script>
+	</script>
   </body>
 </html>
