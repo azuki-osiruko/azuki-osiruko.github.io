@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
-  	<head>
-	  <title>ぽ～たる</title>
-	  <meta charset="UTF-8">
+<head>
+	<title>ぽ～たる</title>
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-		/* ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ */
-		/* ＊ＣＳＳ　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　＊ */
-		/* ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ */
+	<style>
+	/* ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ */
+	/* ＊ＣＳＳ　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　＊ */
+	/* ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ */
 		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
 		/* ページ全体の標準設定                                              */
 		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
@@ -48,14 +48,6 @@
 			font-size: 14px;
 		}
 		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
-		/* JavaScript　設定　　　　　　　　                                  */
-		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
-		/* -----【フェードアウト】ページ離脱時----- */
-		.fade-out {
-			opacity: 0;
-			transition: opacity 0.8s ease;
-		}
-		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
 		/* <div class=***>設定                                             */
 		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
 		/* ヘッダー画像分余白追加 */
@@ -70,39 +62,15 @@
 			right: 80px;                 /* 縦書きなので右側が「上」になる */
 			z-index: 1000;               /* 他の要素より前に出す */
 		}
-		/* -----【アコーディオン】折り畳み表示-----
-		.body-accordion input {display: none;}
-		.body-accordion label {
-			display: block;
-			font-size: 1.6em;
-			font-weight: bold;
-			cursor: pointer;
-			padding: 8px 0;
-		}
-		.body-accordion label::before {
-			content: "＋ ";
-			font-weight: bold;
-		}
-		.body-accordion input:checked + label::before {
-			content: "－ ";
-		}
-		.body-accordion .content {
-			max-width: 0;	
-			overflow: hidden;
-			transition: max-width 0.5s ease;
-			writing-mode: vertical-rl;
-		}
-		.body-accordion input:checked ~ .content {
-			max-width: 2000px;
-		}*/
 		@keyframes fadeIn {
 			from { opacity: 0; }
 			to   { opacity: 1; }
 		}
-    </style>
-		<!-- 外部CSSファイルを読み込む -->
-		<link rel="stylesheet" href="縦書きアコーディオン.css">
-    </head>
+	</style>
+	<!-- 外部CSSファイルを読み込む -->
+	<link rel="stylesheet" href="縦書きアコーディオン.css">
+	<link rel="stylesheet" href="ページ退出.css">
+</head>
 	<body>
 		<h1>日本ぽ～たる</h1>
 		<div class="image-wrapper">
