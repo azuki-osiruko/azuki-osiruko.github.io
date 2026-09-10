@@ -8,31 +8,62 @@
 		/* ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ */
 		/* ＊ＣＳＳ　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　＊ */
 		/* ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ */
-		/* 【ページ】*/						body {
-		/* ・読み込み時のフェードイン    */	opacity: 0;
-  											animation: fadeIn 0.8s ease forwards;
-        /* ・フォント                  */	font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
-        /* ・背景色                    */	background-color: lightblue;
-        /* ・マウスポインター           */	cursor: url("画_カニ.png"), auto;
-		/* ・縦書き（右→左）            */	writing-mode: vertical-rl;
-		/* ・縦書き（句読点や数字）      */	text-orientation: upright;
-											}
-		/*【リンク】*/						a {
-        /* ・マウスカーソル            */	cursor: url("画_カニ.png"), auto;
-		/* ・リンクにつく線をなくす     */	text-decoration: none;
-        									}
-        /*【リンクホバー】*/					a:hover {
-        /* ・蛍光ペン                  */	background-color: yellow;
-        									}
-        /*【本文】*/							p {
-											line-height: 1.6;
-		/* ・文字サイズ                */	font-size: 14px;
-        									}
+		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+		/* ページ全体の標準設定                                              */
+		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+		body {
+			/* 読み込み時のフェードイン */
+			opacity: 0;
+  			animation: fadeIn 0.8s ease forwards;
+			/* フォント */
+        	font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;
+        	/* 背景色 */
+			background-color: lightblue;
+			/* マウスポインター */
+			cursor: url("画_カニ.png"), auto;
+			/* 縦書き（右→左） */
+			writing-mode: vertical-rl;
+			/* 縦書き（句読点や数字） */
+			text-orientation: upright;
+		}
+		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+		/* リンク                                                          */
+		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+		a {
+			/* マウスカーソル */
+			cursor: url("画_カニ.png"), auto;
+			/* リンクにつく線をなくす */
+			text-decoration: none;
+		}
+        /*【リンクホバー】*/
+		a:hover {
+			/* 蛍光ペン */
+			background-color: yellow;
+		}
+        /* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+		/* <p>タグ内                                                       */
+		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+		p {
+			line-height: 1.6;
+			/* 文字サイズ */
+			font-size: 14px;
+		}
 
+		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+		/* JavaScript　<div class=***>設定                                             */
+		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
 		/* -----【フェードアウト】ページ離脱時----- */
 		.fade-out {
 			opacity: 0;
 			transition: opacity 0.8s ease;
+		}
+		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+		/* <div class=***>設定                                             */
+		/* ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～*/
+		/* -----【ヘッダー画像】表示指定----- */
+		.image-wrapper {
+			writing-mode: horizontal-tb; /* 横書きに戻す */
+			margin-bottom: 20px;
 		}
 		/* -----【アコーディオン】折り畳み表示----- */
 		.body-accordion input {display: none;}
@@ -66,7 +97,9 @@
     </head>
 	<body>
 		<h1>日本ぽ～たる</h1>
-		<img src="画_花.png" width="30" height="30">
+		<div class="image-wrapper">
+			<img src="画_花.png" width="30" height="30">
+		</div>
 		<div class="zenbu">
 		<div>
 		<p style="margin: 0;">　～～～～～～～要確認～～～～～～～
@@ -371,27 +404,7 @@
 				各リンク先の内容・運営はリンク先各団体に帰属します。
 			</small>
 		</footer>
-		
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				const links = document.querySelectorAll("a");
-				links.forEach(link => {
-					const url = link.getAttribute("href");
-					// 外部リンクは新しいタブで開く
-					if (url && url.startsWith("http")) {
-						link.target = "_blank";
-						link.rel = "noopener noreferrer";
-						return; // 外部リンクはフェードアウトしない
-					}
-					// 内部リンクだけフェードアウト
-					link.addEventListener("click", e => {
-						if (!url || url.startsWith("#")) return;
-						e.preventDefault();
-						document.body.classList.add("fade-out");
-						setTimeout(() => {window.location = url;}, 500);
-					});
-				});
-			});
-		</script>
+		<!--JavaScript指定-->
+		<script src="リンク先ページ読み込み指定.js"></script>
 	</body>
 </html>
