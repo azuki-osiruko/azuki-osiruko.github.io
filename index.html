@@ -70,7 +70,7 @@
 			right: 80px;                 /* 縦書きなので右側が「上」になる */
 			z-index: 1000;               /* 他の要素より前に出す */
 		}
-		/* -----【アコーディオン】折り畳み表示----- */
+		/* -----【アコーディオン】折り畳み表示-----
 		.body-accordion input {display: none;}
 		.body-accordion label {
 			display: block;
@@ -87,19 +87,21 @@
 			content: "－ ";
 		}
 		.body-accordion .content {
-			max-width: 0;	/* 幅を閉じる */
+			max-width: 0;	
 			overflow: hidden;
 			transition: max-width 0.5s ease;
-			writing-mode: vertical-rl; /* 中身も縦書き */
+			writing-mode: vertical-rl;
 		}
 		.body-accordion input:checked ~ .content {
-			max-width: 2000px;	/* 開いたときの幅 */
-		}
+			max-width: 2000px;
+		}*/
 		@keyframes fadeIn {
 			from { opacity: 0; }
 			to   { opacity: 1; }
 		}
     </style>
+		<!-- 外部CSSファイルを読み込む -->
+		<link rel="stylesheet" href="縦書きアコーディオン.css">
     </head>
 	<body>
 		<h1>日本ぽ～たる</h1>
