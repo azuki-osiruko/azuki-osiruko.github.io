@@ -63,7 +63,10 @@
 		/* -----【ヘッダー画像】表示指定----- */
 		.image-wrapper {
 			writing-mode: horizontal-tb; /* 横書きに戻す */
-			margin-bottom: 20px;
+			position: fixed;             /* 固定表示 */
+			top: 10px;                   /* 上から10px */
+			right: 10px;                 /* 縦書きなので右側が「上」になる */
+			z-index: 1000;               /* 他の要素より前に出す */
 		}
 		/* -----【アコーディオン】折り畳み表示----- */
 		.body-accordion input {display: none;}
