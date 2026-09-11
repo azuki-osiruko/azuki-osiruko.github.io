@@ -5,38 +5,18 @@
 	  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <style>
-		/* ページ離脱時のフェードアウト */
-		.fade-out {
-			opacity: 0;
-			transition: opacity 0.8s ease;
-		}
-	    body {
-			/* 基本設定 */
-			writing-mode: vertical-rl;/*縦書き（右→左）*/
-			text-orientation: upright;/*縦書き（句読点や数字）*/
-			font-family: 'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO', sans-serif;/* フォント */
-			background-color: lightblue;/*背景色*/
-			cursor: url("画_カニ.png"), auto;/* マウスポインター */
-			/* ページ読み込み時 */
-			/*透過度：0だと完全透明、0.5だと50%透明、1だと不透明*/
-  			animation: fadeIn 1s ease forwards;/* ページ切り替え（読み込み時のフェードイン） */
-	    }
-		@keyframes fadeIn {
-			from{opacity: 0;}
-			to { opacity: 1; }
-		}
-		  /* リンクの上でも同じカーソルにする */
-		  a {
-			  cursor: url("画_カニ.png"), auto;
+		  /* ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ */
+		  /* ＊ＣＳＳ　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　＊ */
+		  /* ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ */
+		  body {
+			  /* 基本設定 */
+			  /* ページ読み込み時 */
+			  /*透過度：0だと完全透明、0.5だと50%透明、1だと不透明*/
+			  animation: fadeIn 1s ease forwards;/* ページ切り替え（読み込み時のフェードイン） */
 		  }
-		  /* リンクホバー時（蛍光ペン） */
-		  a:hover {
-			  background-color: yellow;
+		  table td {
+			  padding: 10px;
 		  }
-		  p {
-			  line-height: 1.6;
-		  }
-		  
 		  /* 行全体のホバー反応 */
 		  .pref-row {
 			  padding: 2px 4px;
@@ -68,7 +48,6 @@
 			  border-radius: 8px; 			/* 角丸 */
 			  margin: 10px 0;				/* 上下の間隔 */
 		  }
-
 		  .links-list {
 			  list-style: none;
 			  padding: 0;
@@ -77,13 +56,33 @@
 		  .links-list li {
 			  margin: 6px 0;
 		  }
-		  
 	  </style>
+		<!-- 外部CSSファイルを読み込む -->
+		<link rel="stylesheet" href="縦書き標準.css">
+		<link rel="stylesheet" href="縦書きアコーディオン.css">
+		<link rel="stylesheet" href="ページ退出.css">
     </head>
-  
 	<body>
 		<h1>地域index</h1>
-    <p><a href="地域インフラ.html">インフラ</a>　<a href="地方行財政.html">地方行財政</a>　<a href="建物.html">建物</a>　<a href="全国トピックス.html">地域のトピック</a>
+		<table border="1">
+			<tr>
+				<td><a href="地域インフラ.html">インフラ</a></td>
+				<td><span style="font-size: 2em;">☀️</span><a href="地域index.html">地域トップ</a></td>
+				<td><span style="font-size: 2em;">🌁</span><a href="買い物.html">買い物</a></td>
+			</tr>
+			<tr>
+				<td><a href="地方行財政.html">地方行財政</a></td>
+				<td><span style="font-size: 2em;">🔭</span><a href="仕事index.html">仕事トップ</a></td>
+				<td><span style="font-size: 2em;">🌌</span><a href="コンビニでできること.html">コンビニでできること</a></td>
+			</tr>
+			<tr>
+				<td><a href="全国トピックス.html">地域のトピック</a></td>
+				<td><a href="建物.html">建物</a>　</td>
+				<td><span style="font-size: 2em;">✅</span><a href="https://happylilac.net/sk1809191133.html#google_vignette">身近なマーク</a></td>
+			</tr>
+		</table>
+    <p>
+		　　
     <br>
     <br>-------おでかけ-------</p>
 			<ul class="links-list">
