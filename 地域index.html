@@ -100,33 +100,7 @@
 				各リンク先の内容・運営はリンク先各団体に帰属します。
 			</small>
 		</footer>
-		
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				const links = document.querySelectorAll("a");
-				links.forEach(link => {
-					
-					const url = link.getAttribute("href");
-					
-					// popover トリガーはフェードアウト処理を無視
-					if (link.hasAttribute("popovertarget")) return;
-					
-					// 外部リンクは新しいタブで開く
-					if (url && url.startsWith("http")) {
-						link.target = "_blank";
-						link.rel = "noopener noreferrer";
-						return; // 外部リンクはフェードアウトしない
-					}
-					
-					// 内部リンクだけフェードアウト
-					link.addEventListener("click", e => {
-						if (!url || url.startsWith("#")) return;
-						e.preventDefault();
-						document.body.classList.add("fade-out");
-						setTimeout(() => {window.location = url;}, 500);
-					});
-				});
-			});
-		</script>
-	</body>
+		<!--JavaScript指定-->
+		<script src="リンク先ページ読み込み指定.js"></script>
+		</body>
 </html>
