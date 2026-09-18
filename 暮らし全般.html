@@ -4,27 +4,41 @@
 	  <title>ぽ～たる</title>
 	  <meta charset="UTF-8">
 	  <style>
-		table {
-		  border-collapse: collapse;
-		  width: 70%;
-		}
-
-		th, td {
-		  border: 1px solid #ccc;
-		  padding: 8px;
-		}
-
-		/* ホバー時（蛍光ペン） */
-		tr:hover {
-		  background-color: #4d5aaf;
-		  color: #ffffff;
-		}
-		tr:hover a {
-		  color: #ffffff;
-		}
-		a {
-		  color: #2a4bd7; /* 落ち着いた青 */
-		}
+		  .water-card {
+			  display: grid;
+			  grid-template-columns: 150px 1fr;
+			  background: #e0f4ff;
+			  border-radius: 10px;
+			  padding: 10px;
+			  width: 480px;
+			  font-family: sans-serif;
+		  }
+		  .left {
+			  background: #4db8ff;
+			  color: white;
+			  border-radius: 8px;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+		  }
+		  .icon {
+			  font-size: 2.5em;
+			  font-weight: bold;
+		  }
+		  .right {
+			  background: white;
+			  border-radius: 8px;
+			  padding: 10px;
+			  font-size: 0.9em;
+			  color: #333;
+		  }
+		  .right a {
+			  color: #0066aa;
+			  text-decoration: none;
+		  }
+		  .right a:hover {
+			  text-decoration: underline;
+		  }
 	  </style>
 	</head>
 
@@ -39,10 +53,16 @@
 		<!-- ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
 		<!-- ＊（２）水道　　　　　　　　　　　　　　　　　　　　　　　　　　＊ -->
 		<!-- ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
-		<span style="font-size: 2em;">🫗水</span>
-		<br><a href="http://suidoukyoku.net/">水道局</a>
-		<br><a href="https://www.youtube.com/watch?v=kEjPU8B8EgI">水道料金の仕組み</a>　<a href="https://setuyakumanyuaru.com/arekore/suidouryou.html">（※算出方法）</a>
-		<br>
+		<div class="water-card">
+			<div class="left">
+				<span class="icon">🫗水</span>
+			</div>
+			<div class="right">
+				<a href="http://suidoukyoku.net/">水道局</a><br>
+				<a href="https://www.youtube.com/watch?v=kEjPU8B8EgI">水道料金の仕組み</a>
+				<a href="https://setuyakumanyuaru.com/arekore/suidouryou.html">（算出方法）</a>
+			</div>
+		</div>
 		<!-- ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
 		<!-- ＊（２）救急連絡先　　　　　　　　　　　　　　　　　　　　　　　＊ -->
 		<!-- ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ -->
