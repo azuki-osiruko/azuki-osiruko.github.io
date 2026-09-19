@@ -44,15 +44,20 @@
 		  .right a:hover {
 			  text-decoration: underline;
 		  }
-		  .right2 {
-			  width: 300px;
-			  background: #DCDCDC;
-			  border-radius: 8px;
-			  padding: 10px;
-			  margin-left: 10px;
-			  font-size: 0.9em;
-			  color: #333;
-		  }
+		  .btn-sticky {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;/*左線*/
+  color: #ff7c5c;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.btn-sticky:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
 	  </style>
 	</head>
 
@@ -121,15 +126,9 @@
 			<br>　　⭐<a href="https://www.soumu.go.jp/menu_kyotsuu/chihou.html">行政相談</a>（<a href="https://www.soumu.go.jp/menu_news/kouhoushi/gyouseisoudan/index.html">？</a>）
 			</div>
 		</div>
-		<div class="right2">
-			<span class="icon"><a href="地域インフラ.html">インフラ</a></span>
-		</div>
-		<div class="right2">
-			<span class="icon"><a href="建物.html">建物</a></span>
-		</div>
-		<div class="right2">
-			<span class="icon"><a href="地域今昔.html">今昔</a></span>
-		</div>
+		<a href="地域インフラ.html" class="btn-sticky">インフラ</a>
+		<a href="建物.html" class="btn-sticky">建物</a>
+		<a href="地域今昔.html" class="btn-sticky">今昔</a>
 		<!--- ====================================================================== --->
 		<!--- フッター                                                                --->
 		<!--- ====================================================================== --->
