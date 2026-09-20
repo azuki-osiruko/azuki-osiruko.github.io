@@ -356,36 +356,15 @@
 	<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ -->
     <!-- ■　フッター                                                                                     ■ -->
 	<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ -->
-	<footer style="margin-top: 50px; color: gray;">
+		<footer style="margin-top: 50px; color: gray;">
 		<small>
 			このサイトは個人制作のリンクポータルです。
 			<br>
 			各リンク先の内容・運営はリンク先各団体に帰属します。
 		</small>
-	</footer>
-
-		
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				const links = document.querySelectorAll("a");
-				links.forEach(link => {
-					const url = link.getAttribute("href");
-					// 外部リンクは新しいタブで開く
-					if (url && url.startsWith("http")) {
-						link.target = "_blank";
-						link.rel = "noopener noreferrer";
-						return; // 外部リンクはフェードアウトしない
-					}
-					// 内部リンクだけフェードアウト
-					link.addEventListener("click", e => {
-						if (!url || url.startsWith("#")) return;
-						e.preventDefault();
-						document.body.classList.add("fade-out");
-						setTimeout(() => {window.location = url;}, 500);
-					});
-				});
-			});
-		</script>
+		</footer>		
+		<!--JavaScript指定-->
+		<script src="リンク先ページ読み込み指定.js"></script>
 		<!-- 「　」全角スペースをグレップ検索して確認しておこう。 -->
 	</body>
 </html>
