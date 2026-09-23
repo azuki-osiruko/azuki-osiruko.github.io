@@ -8,11 +8,11 @@
 	padding: 8px 0;
 }
 .body-accordion label::before {
-  content: "＋ ";
+  content: "🎀 ";
 	font-weight: bold;
 }
 .body-accordion input:checked + label::before {
-  content: "－ ";
+  content: "🧣 ";
 }
 .body-accordion .content {
   max-width: 0;	/* 幅を閉じる */
